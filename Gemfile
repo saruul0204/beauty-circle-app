@@ -67,3 +67,6 @@ gem 'rubocop', require: false
 gem 'rubocop-performance'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'
+
+# add simplecov for tracking test coverage
+gem 'simplecov', require: false, group: :test
