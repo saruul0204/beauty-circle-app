@@ -9,4 +9,18 @@ RSpec.describe PagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'GET about' do
+    it 'has a success status code' do
+      get :about
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'GET contact' do
+    it 'has a success status code' do
+      get :contact
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
