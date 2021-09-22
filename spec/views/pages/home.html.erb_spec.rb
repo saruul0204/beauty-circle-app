@@ -2,6 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe 'pages/home.html.erb', type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe 'pages/home.html.erb' do # rubocop:disable RSpec/DescribeClass
+  it 'renders home page' do
+    render
+
+    expect(rendered).to include('Welcome to Beauty Circle')
+  end
 end
