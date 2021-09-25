@@ -14,9 +14,11 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'  %>
   </head>
 
-  <body>
+  <body class="flex flex-col h-screen justify-between">
     <%= render 'shared/navbar' %>
-    <%= yield %>
+    <div class="mb-auto">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
