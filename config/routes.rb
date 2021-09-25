@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/pages/home'
   get '/pages/about'
   get '/pages/contact'
+  post '/create_contact', to: 'pages#create_contact'
   root to: 'pages#home'
 end
