@@ -9,8 +9,12 @@
       <li><%= link_to "Contact us", pages_contact_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
       </ul>
     <ul class="flex items-center hidden space-x-8 lg:flex">
-      <li><%= link_to "Sign in", root_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
-      <li><%= link_to "Sign up", root_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-gray-400 hover:bg-gray-600 focus:shadow-outline focus:outline-none" %></li>
+      <% if user_signed_in? %>
+       <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+      <% else %>
+      <li><%= link_to "Sign in", new_user_session_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+      <li><%= link_to "Sign up", new_user_registration_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-gray-400 hover:bg-gray-600 focus:shadow-outline focus:outline-none" %></li>
+      <% end %>
     </ul>
     <!-- Mobile menu -->
     <div class="lg:hidden">

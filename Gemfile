@@ -72,3 +72,4 @@ gem 'rubocop-rspec'
 gem 'simplecov', require: false, group: :test
 
 gem 'devise'
+gem 'email_validator'
