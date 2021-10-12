@@ -14,10 +14,12 @@
 						    <div class="mb-4">
 								<%= f.label :email, class:"block mb-2 text-sm font-bold text-gray-700" %>
 								<%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", class:"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"janedoe@email.com" %>
+								<%= field_has_error(:email, resource)%>
 							</div>
 							<div class="mb-4">
 								<%= f.label :password, class:"block mb-2 text-sm font-bold text-gray-700" %>
 								<%= f.password_field :password, required: true, autocomplete: "new-password", class:"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"Your Password" %>
+								<%= field_has_error(:password, resource)%>
 							</div>
 							<% if devise_mapping.rememberable? %>
 							    <div class="mb-4">

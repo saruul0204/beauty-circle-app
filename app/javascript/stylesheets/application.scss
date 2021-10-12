@@ -2,3 +2,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.error-message {
+    @apply bg-red-100 text-xs text-red-500 pl-2 py-2 mb-2 rounded text-left;
+}
