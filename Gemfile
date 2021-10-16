@@ -70,3 +70,6 @@ gem 'rubocop-rspec'
 
 # add simplecov for tracking test coverage
 gem 'simplecov', require: false, group: :test
+
+gem 'devise'
+gem 'email_validator'

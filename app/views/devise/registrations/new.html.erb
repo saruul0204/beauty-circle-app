@@ -1,0 +1,58 @@
+	<div class="container mx-auto">
+			<div class="flex justify-center px-6 my-12">
+				<!-- Row -->
+				<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+					<!-- Col -->
+					<div
+						class="w-full h-auto bg-gray-200 hidden lg:block lg:w-5/12 bg-cover rounded-l-lg"
+						style="background-image: url(<%= asset_path('signup2') %>);"
+					></div>
+					<!-- Col -->
+					<div class="w-full lg:w-7/12 bg-gray-200 p-5 rounded-lg lg:rounded-l-none">
+						<h3 class="pt-4 text-2xl text-center">Create an Account!</h3>
+						<%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class:"px-8 pt-6 pb-8 mb-4 bg-gray-200 rounded" } do |f| %>
+						 <div class="mb-4">
+								<%= f.label :username, class:"block mb-2 text-sm font-bold text-gray-700" %>
+								<%= f.text_field :username, required: true, autofocus: true, autocomplete: "username", class:"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"janedoe" %>
+								<%= field_has_error(:username, resource)%>
+							</div>
+							<div class="mb-4 md:flex md:justify-between">
+								<div class="mb-4 md:mr-2 md:mb-0">
+								<%= f.label :first_name, class:"block mb-2 text-sm font-bold text-gray-700" %>
+								<%= f.text_field :first_name, required: true, autofocus: true, autocomplete: "first-name", class:"w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"Jane" %>
+								<%= field_has_error(:first_name, resource)%>
+								</div>
+								<div class="md:ml-2">
+								<%= f.label :last_name, class:"block mb-2 text-sm font-bold text-gray-700" %>
+								<%= f.text_field :last_name, required: true, autofocus: true, autocomplete: "last-name", class:"w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"Doe" %>
+								<%= field_has_error(:last_name, resource)%>
+								</div>
+							</div>
+							<div class="mb-4">
+								<%= f.label :email, class:"block mb-2 text-sm font-bold text-gray-700" %>
+								<%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", class:"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"janedoe@email.com" %>
+								<%= field_has_error(:email, resource)%>
+							</div>
+							<div class="mb-4 md:flex md:justify-between">
+								<div class="mb-4 md:mr-2 md:mb-0">
+									<%= f.label :password, class:"block mb-2 text-sm font-bold text-gray-700" %>
+									<%= f.password_field :password, required: true, autocomplete: "new-password", class:"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"Your Password" %>
+									<%= field_has_error(:password, resource)%>
+								</div>
+								<div class="md:ml-2">
+									<%= f.label :password_confirmation, class:"block mb-2 text-sm font-bold text-gray-700" %>
+									<%= f.password_field :password_confirmation, required: true, autocomplete: "new-password", class:"w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline", placeholder:"Confirm Your Password" %>
+									<%= field_has_error(:password_confirmation, resource)%>
+								</div>
+							</div>
+
+							<div class="mb-6 text-center">
+								<%= f.submit "Register Account", class:"w-full px-4 py-2 font-bold text-white bg-gray-400 rounded hover:bg-gray-600 focus:outline-none focus:shadow-outline" %>
+							</div>
+							<hr class="mb-6 border-t" />
+							<% end %>
+							<%= render "devise/shared/links" %>
+					</div>
+				</div>
+			</div>
+		</div>
