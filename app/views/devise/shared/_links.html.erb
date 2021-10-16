@@ -1,0 +1,33 @@
+<%- if controller_name != 'sessions' %>
+  <p class="text-sm text-center text-gray-400 mb-3">Forgot Password?
+  <%= link_to "Reset password", new_password_path(resource_name), class:"text-blue-500 focus:outline-none focus:underline focus:text-blue-600 dark:focus:border-blue-800" %>.
+  </p>
+  <p class="text-sm text-center text-gray-400">Already have an account?
+  <%= link_to "Sign in", new_session_path(resource_name), class:"text-blue-500 focus:outline-none focus:underline focus:text-blue-600 dark:focus:border-blue-800" %>.
+  </p>
+
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <p class="text-sm text-center text-gray-400">Don't have an account?
+  <%= link_to "Sign up", new_registration_path(resource_name), class:"inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" %>
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <p class="text-sm text-center text-gray-400 mb-3">Forgot Password?
+  <%= link_to "Reset password", new_password_path(resource_name), class:"inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" %>
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+  <% end %>
+<% end %>
