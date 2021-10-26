@@ -13,7 +13,8 @@ RSpec.describe 'businesses/index.html.erb', type: :view do
     it 'displays a business card' do
       render
 
-      expect(rendered).to include(business.name, business.city, business.phone_number, business.description, 'See more information')
+      expect(rendered).to include(business.name, business.city, business.phone_number, business.description,
+                                  'See more information')
     end
   end
 end
