@@ -34,5 +34,14 @@ RSpec.describe PagesController, type: :controller do
         end.to change(Contact, :count).by(1)
       end
     end
+
+    context 'with invalid attributes' do
+      it 'doesnt create new contact' do
+        expect do
+          post :create_contact,
+               params: { contact: { full_name: '', email: '', message: '' } }
+        end.to change(Contact, :count).by(0)
+      end
+    end
   end
 end
