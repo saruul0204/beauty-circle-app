@@ -2,7 +2,6 @@
 <div class="min-h-screen bg-gray-100 flex justify-center items-center py-20">
   <div class="container mx-auto p-12 bg-gray-100 rounded-xl">
     <h1 class="text-4xl uppercase font-bold from-current mb-8">Browse all salons</h1>
-    <%= link_to 'Skopje Salons', businesses_path(salon_city: 'Skopje') %>
     <!-- Box-1 -->
     <div class="sm:grid sm:grid-cols-2 gap-6 space-y-4 sm:space-y-0">
     <% @businesses.each do |business|%>
