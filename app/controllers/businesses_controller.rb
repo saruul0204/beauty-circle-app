@@ -2,11 +2,7 @@
 
 class BusinessesController < ApplicationController
   def index
-    if params[:salon_city]
-      @businesses = Business.where(city: params[:salon_city])
-    else
-      @businesses = Business.all
-    end
+    Business.all
   end
 
   def show

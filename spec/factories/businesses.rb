@@ -7,8 +7,12 @@ FactoryBot.define do
     address { Faker::Address.street_address }
     country { Faker::Address.country }
     city { Faker::Address.city }
-    open_hour { '8:00 am' }
-    close_hour { '6:00 pm' }
+    open_hour do
+      Faker::Time.between_dates(from: Time.zone.today - 1, to: Time.zone.today, period: :morning).strftime('%I:%M %p')
+    end
+    close_hour do
+      Faker::Time.between_dates(from: Time.zone.today - 1, to: Time.zone.today, period: :evening).strftime('%I:%M %p')
+    end
     phone_number { Faker::PhoneNumber.cell_phone_with_country_code }
     email { Faker::Internet.email }
     facebook_url { 'https://www.facebook.com/' }
