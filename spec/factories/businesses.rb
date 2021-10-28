@@ -1,15 +1,21 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :business do
-    name { "MyString" }
-    description { "MyText" }
-    address { "MyString" }
-    country { "MyString" }
-    city { "MyString" }
-    open_hour { "MyString" }
-    close_hour { "MyString" }
-    phone_number { "MyString" }
-    email { "MyString" }
-    facebook_url { "MyString" }
-    instagram_url { "MyString" }
+    name { Faker::Company.name }
+    description { Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4) }
+    address { Faker::Address.street_address }
+    country { Faker::Address.country }
+    city { Faker::Address.city }
+    open_hour do
+      Faker::Time.between_dates(from: Time.zone.today - 1, to: Time.zone.today, period: :morning).strftime('%I:%M %p')
+    end
+    close_hour do
+      Faker::Time.between_dates(from: Time.zone.today - 1, to: Time.zone.today, period: :evening).strftime('%I:%M %p')
+    end
+    phone_number { Faker::PhoneNumber.cell_phone_with_country_code }
+    email { Faker::Internet.email }
+    facebook_url { 'https://www.facebook.com/' }
+    instagram_url { 'https://www.instagram.com/' }
   end
 end
