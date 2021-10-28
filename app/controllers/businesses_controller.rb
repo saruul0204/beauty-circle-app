@@ -2,7 +2,7 @@
 
 class BusinessesController < ApplicationController
   def index
-    Business.all
+    @businesses = Business.all
   end
 
   def show

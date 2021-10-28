@@ -8,6 +8,7 @@
     "@rails/webpacker": "5.4.2",
     "autoprefixer": "^10.3.4",
     "postcss": "^8.3.6",
+    "stimulus": "^3.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
