@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe 'businesses/index.html.erb', type: :view do
-  let(:business) { create(:business) }
+  let(:user) { create(:user) }
+  let(:business) { create(:business, user: user) }
 
   before do
     assign(:businesses, [business])

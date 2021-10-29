@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe 'businesses/show.html.erb', type: :view do
-  let(:business) { create(:business) }
+  let(:user) { create(:user) }
+  let(:business) { create(:business, user: user) }
 
   it 'displays a business card' do
     assign(:business, business)
