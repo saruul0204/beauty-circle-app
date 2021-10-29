@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class BusinessesController < ApplicationController
+  include Pagy::Backend
+
   def index
-    Business.all
+    @pagy, @businesses = pagy(Business.order(created_at: :desc))
   end
 
   def show
