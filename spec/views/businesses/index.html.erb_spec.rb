@@ -7,6 +7,7 @@ RSpec.describe 'businesses/index.html.erb', type: :view do
 
   before do
     assign(:businesses, [business])
+    assign(:pagy, Pagy.new(count: 100, page: 1))
   end
 
   context 'with dynamic content' do
