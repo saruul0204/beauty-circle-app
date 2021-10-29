@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Pagy::Frontend
+
   def field_has_error(field_name, form_object)
     return unless form_object.errors.include?(field_name)
 
