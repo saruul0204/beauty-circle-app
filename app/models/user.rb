@@ -8,6 +8,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :businesses, dependent: :destroy
+
   validates :email, email: { mode: :strict }
   validates :username, presence: true, uniqueness: { case_sensitive: false },
                        length: { minimum: MIN_LEN, maximum: MAX_LEN }

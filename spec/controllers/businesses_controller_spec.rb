@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe BusinessesController, type: :controller do
-  let(:business) { create(:business) }
+  let(:user) { create(:user) }
+  let(:business) { create(:business, user: user) }
 
   describe 'GET /businesses' do
     it 'has a success status code' do

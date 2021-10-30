@@ -5,6 +5,10 @@ require 'rails_helper'
 describe User, type: :model do
   subject(:user) { create :user }
 
+  describe 'associations' do
+    it { is_expected.to have_many(:businesses) }
+  end
+
   describe 'validations' do
     it { expect(user).to be_valid }
 

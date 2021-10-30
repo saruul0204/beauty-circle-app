@@ -3,7 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe Business, type: :model do
-  subject(:business) { create(:business) }
+  subject(:business) { create(:business, user: user) }
+
+  let(:user) { create :user }
+
+  describe 'associations' do
+    it { is_expected.to belong_to(:user) }
+  end
 
   describe 'validations' do
     it { expect(business).to be_valid }
