@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   get '/pages/contact'
   post '/create_contact', to: 'pages#create_contact'
   root to: 'pages#home'
+
+  namespace :dashboard do
+    resources :businesses
+    root to: 'pages#home'
+  end
 end
