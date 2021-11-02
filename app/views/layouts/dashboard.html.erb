@@ -19,12 +19,10 @@
         <div class="relative min-h-screen md:flex">
             <!-- sidebar -->
             <div class="bg-white text-gray-600 w-64 space-y-6 py-7 px-2 fixed inset-y-0 left-0 top-0 bottom-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out" >
-
                 <!-- logo -->
                 <a href="#" class="text-gray-600 flex items-center space-x-2 px-4">
                     <span class="text-2xl font-extrabold">Beauty Circle</span>
                 </a>
-
                 <!-- nav -->
                 <nav>
                     <div x-data="{ open: false }">
@@ -37,10 +35,8 @@
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     </path>
                                 </svg>
-
                                 <span class="mx-4 font-medium ">Dashboard</span>
                             </span>
-
                             <span>
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path x-show="! open" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2"
@@ -50,7 +46,6 @@
                                 </svg>
                             </span>
                         </button>
-
                         <div x-show="open" class="bg-white">
                             <%= link_to 'Home', dashboard_root_path, class:"py-2 px-16 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                             <%= link_to 'Statistics', "#", class:"py-2 px-16 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
@@ -70,10 +65,8 @@
                                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     </path>
                                 </svg>
-
                                 <span class="mx-4 font-medium ">Account</span>
                             </span>
-
                             <span>
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path x-show="! open" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2"
@@ -83,7 +76,6 @@
                                 </svg>
                             </span>
                         </button>
-
                         <div x-show="open" class="bg-white">
                             <%= link_to 'Edit Account', edit_user_registration_path, class:"py-2 px-16 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                         </div>
@@ -100,10 +92,8 @@
                                     <line x1="19" y1="21" x2="19" y2="10.85"></line>
                                     <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4"></path>
                                 </svg>
-
                                 <span class="mx-4 font-medium ">My business</span>
                             </span>
-
                             <span>
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path x-show="! open" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2"
@@ -113,7 +103,6 @@
                                 </svg>
                             </span>
                         </button>
-
                         <div x-show="open" class="bg-white">
                             <%= link_to 'Show all', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                             <%= link_to 'Show my businesses', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
@@ -126,7 +115,6 @@
             <div  data-controller="dropdown" class="md:hidden flex justify-between">
                 <!-- logo -->
                 <a href="#" class="block p-4 text-gray-800 font-bold">Beauty Circle</a>
-
                 <button data-action="click->dropdown#hamburger" aria-label="Open Menu" title="Open Menu"
                     class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50">
                     <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -177,13 +165,10 @@
                     </div>
                 </div>
             </div>
-
             <!-- content -->
-            <div class="bg-gray-100 flex-1 p-10 text-2xl font-bold">
-                content goes here
+            <div class="bg-gray-100 flex-1 p-10">
                 <%= yield %>
             </div>
-
         </div>
         <%= render 'shared/footer' %>
     </div>
