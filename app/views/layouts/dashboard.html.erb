@@ -80,7 +80,7 @@
                             <%= link_to 'Edit Account', edit_user_registration_path, class:"py-2 px-16 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                         </div>
                     </div>
-                <div x-data="{ open: false }">
+                    <div x-data="{ open: false }">
                         <button @click="open = !open"
                             class="w-full flex justify-between items-center py-2.5 px-4 text-gray-600 cursor-pointer hover:bg-pink-200 hover:text-pink-600 focus:outline-none">
                             <span class="flex items-center">
@@ -108,6 +108,14 @@
                             <%= link_to 'Show my businesses', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                             <%= link_to 'Add new business', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                         </div>
+                    </div>
+                    <div class="w-full flex justify-between items-center py-2.5 px-4 text-gray-600 cursor-pointer hover:bg-pink-200 hover:text-pink-600 focus:outline-none">
+                        <span class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:bg-pink-200 hover:text-pink-600 transition duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg>
+                            <%=link_to "Sign out", destroy_user_session_path, method: :delete, aria: { label:"Sign out" }, title:"Sign out", class:"mx-4 font-medium"%>
+                        </span>
                     </div>
                 </nav>
             </div>
@@ -147,7 +155,7 @@
                                 <li><%= link_to "Dashboard", dashboard_root_path, aria: { label:"Dashboard" }, title:"Go to Dashboard", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
                                     <ul class= "space-y2">
                                         <li class="mb-1 ml-4"><%= link_to "Home", dashboard_root_path%></li>
-                                        <li class="mb-1 ml-6"><%= link_to "Statistics", "#" %></li>
+                                        <li class="mb-1 ml-4"><%= link_to "Statistics", "#" %></li>
                                     </ul>
                                 <li><h1 aria-label="Account" title="Account" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Account</h1></li>
                                     <ul class= "space-y2">
@@ -156,8 +164,8 @@
                                 <li><h1 aria-label="My Business" title="My Business" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">My Business</h1></li>
                                     <ul class= "space-y2">
                                         <li class="mb-1 ml-4"><%= link_to "Show all", businesses_path%></li>
-                                        <li class="mb-1 ml-6"><%= link_to "Show my businesses", businesses_path%></li>
-                                        <li class="mb-1 ml-8"><%= link_to "Add new business", businesses_path%></li>
+                                        <li class="mb-1 ml-4"><%= link_to "Show my businesses", businesses_path%></li>
+                                        <li class="mb-1 ml-4"><%= link_to "Add new business", businesses_path%></li>
                                     </ul>
                                 <li><%=link_to "Sign out", destroy_user_session_path, method: :delete, aria: { label:"Sign out" }, title:"Sign out", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
                             </ul>
@@ -170,7 +178,7 @@
                 <%= yield %>
             </div>
         </div>
-        <%= render 'shared/footer' %>
     </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
