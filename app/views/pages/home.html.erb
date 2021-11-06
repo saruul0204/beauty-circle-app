@@ -1,9 +1,13 @@
-<div class="container mx-auto bg-gray-400 h-96 rounded-md flex items-center">
-      <div class="sm:ml-20 text-gray-50 text-center sm:text-left">
+<div class="container mx-auto mt-10 bg-gray-400 h-96 rounded-md flex items-center">
+      <div class="sm:ml-20 text-gray-50 text-center sm:text-left" >
         <h1 class="text-5xl font-bold mb-4">Welcome to Beauty Circle</h1>
         <p class="text-lg inline-block sm:block">where you will find all beauty salons in Macedonia in one place.</p>
-        <%= link_to "Browse salons", root_path, class:"inline-flex items-center justify-center w-full h-12 mt-8 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-gray-500 hover:bg-gray-600 focus:shadow-outline focus:outline-none"%>
+        <%= link_to "Browse salons", root_path, class:"inline-flex items-center justify-center w-full h-12 mt-8 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none"%>
       </div>
+      <!--
+      <%= image_tag 'home-logo.jpg', class:"object-cover w-full h-full max-w-2xl rounded-md", alt:"home image"%>
+      style="background-image: url(<%= asset_path('home-logo') %>);"
+-->
 </div>
 <main class="py-16 container mx-auto px-6 md:px-0">
     <section>
