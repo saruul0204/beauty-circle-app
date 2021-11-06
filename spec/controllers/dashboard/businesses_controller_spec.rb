@@ -29,23 +29,25 @@ describe Dashboard::BusinessesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+  # rubocop:disable Layout/LineLength
 
   describe 'POST create business' do
     context 'with valid attributes' do
       it 'creates new business' do
         expect do
           post :create,
-                   params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city: 'Ohrid', country: 'MK',
-                                         open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com' } }
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city: 'Ohrid', country: 'MK',
+                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com' } }
         end.to change(Business, :count).by(1)
       end
     end
+    # rubocop:enable Layout/LineLength
 
     context 'with invalid attributes' do
       it 'doesnt create new business' do
         expect do
           post :create,
-                   params: { business: { name: '', description: '' } }
+               params: { business: { name: '', description: '' } }
         end.to change(Business, :count).by(0)
       end
     end
