@@ -1,7 +1,6 @@
-<!-- Box-1 -->
 <h1 class="text-2xl uppercase font-bold from-current mb-8">Show my businesses</h1>
 <div class="grid sm:grid-cols-1 lg:grid-cols-2 sm:gap-8 space-y-4 sm:space-y-0">
-    <% current_user.businesses.each do |business|%>
+    <% @businesses.each do |business|%>
         <div class="bg-white rounded-md shadow-md hover:shadow-lg transform transition duration-500 hover:scale-105 flex flex-col items-stretch">
             <%= image_tag 'salon_photo.jpeg', class:"object-cover w-full h-full rounded-tl-md rounded-tr-md", style: 'height: 250px; max-height: 250px;', alt:"salon image"%>
             <div class="px-4 pt-4">

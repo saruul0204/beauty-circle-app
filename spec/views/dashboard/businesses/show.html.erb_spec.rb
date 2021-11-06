@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'businesses/show.html.erb', type: :view do
+RSpec.describe 'dashboard/businesses/show.html.erb', type: :view do
   let(:user) { create(:user) }
   let(:business) { create(:business, user: user) }
 
