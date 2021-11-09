@@ -10,7 +10,9 @@
       </ul>
     <ul class="flex items-center hidden space-x-8 lg:flex">
       <% if user_signed_in? %>
-       <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+        <li><%= link_to "Dashboard", dashboard_root_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none" %></li>
+
       <% else %>
       <li><%= link_to "Sign in", new_user_session_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
       <li><%= link_to "Sign up", new_user_registration_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none" %></li>
