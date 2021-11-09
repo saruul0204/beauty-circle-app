@@ -1,32 +1,66 @@
-<div class="container mx-auto mt-10 bg-gray-400 h-96 rounded-md flex items-center">
-      <div class="sm:ml-20 text-gray-50 text-center sm:text-left" >
-        <h1 class="text-5xl font-bold mb-4">Welcome to Beauty Circle</h1>
-        <p class="text-lg inline-block sm:block">where you will find all beauty salons in Macedonia in one place.</p>
-        <%= link_to "Browse salons", root_path, class:"inline-flex items-center justify-center w-full h-12 mt-8 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none"%>
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="flex flex-col items-center justify-between lg:flex-row">
+    <div class="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
+      <div class="max-w-xl mb-6">
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+          Discover & book local<br class="hidden md:block" />
+          beauty professionals
+        </h2>
+        <p class="text-base text-gray-700 md:text-lg">
+          Beauty Circle is the best way to book hair and beauty online. Find salons in your area, read reviews, book (rebook and reschedule),
+          on the go. Whichever treatment you’re after – haircut, nails, massage – we’ll help you sort a salon slot, 24/7.
+        </p>
       </div>
-      <!--
-      <%= image_tag 'home-logo.jpg', class:"object-cover w-full h-full max-w-2xl rounded-md", alt:"home image"%>
-      style="background-image: url(<%= asset_path('home-logo') %>);"
--->
+      <div class="flex items-center">
+        <div class="relative group">
+          <div class="absolute -inset-0.5 bg-pink-300 rounded-md filter blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <%= link_to "Browse salons", businesses_path, class:"relative px-5 py-4 bg-pink-200 text-pink-600 rounded-md leading-none flex"%>
+        </div>
+      </div>
+    </div>
+    <div class="relative lg:w-1/2">
+      <%= image_tag 'hero.jpeg', class:"object-cover w-full h-56 rounded shadow-lg sm:h-96", alt:"home image"%>
+    </div>
+  </div>
 </div>
-<main class="py-16 container mx-auto px-6 md:px-0">
-    <section>
-      <h1 class="text-3xl font-bold text-gray-600 mb-10">Explore all salons</h1>
-      <div class="grid sm:grid-cols-3 gap-4 grid-cols-2">
-        <div>
-          <div class="bg-gray-300 h-44"></div>
-          <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in Skopje</h3>
-        </div>
-        <div>
-          <div class="bg-gray-300 h-44"></div>
-          <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in Ohrid</h3>
-        </div>
-        <div>
-          <div class="bg-gray-300 h-44"></div>
-          <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in Bitola</h3>
-        </div>
-      </div>
-      <hr class="w-40 my-14 border-4 rounded-md sm:mx-0 mx-auto" />
-    </section>
-</main>
 
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <h1 class="text-3xl font-bold text-gray-900 mb-10">Explore all salons</h1>
+  <div class="grid sm:grid-cols-3 gap-4 grid-cols-2">
+    <div>
+      <div class="bg-gray-300 h-44"></div>
+      <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in Skopje</h3>
+    </div>
+    <div>
+      <div class="bg-gray-300 h-44"></div>
+      <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in Ohrid</h3>
+    </div>
+    <div>
+      <div class="bg-gray-300 h-44"></div>
+      <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in Bitola</h3>
+    </div>
+  </div>
+</div>
+
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+    <div class="flex flex-col mb-16 sm:text-center sm:mb-0">
+      <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+          Are you a beauty professional?
+        </h2>
+        <p class="text-base text-gray-700 md:text-lg">
+          We don’t just help you run your business, we help you grow it. Earn more money, get exposure to millions of clients, and keep your regulars coming back!
+        </p>
+      </div>
+      <div>
+        <%= link_to new_dashboard_business_path, class:"text-pink-600 py-2 mt-auto mb-2 focus:outline-none hover:text-pink-700 text-lg px-4 pb-2" do %>
+          Sign up and set your up your business
+          <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+            <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+          </svg>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
