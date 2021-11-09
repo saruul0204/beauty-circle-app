@@ -6,6 +6,6 @@ describe 'pages/home.html.erb' do # rubocop:disable RSpec/DescribeClass
   it 'renders home page' do
     render
 
-    expect(rendered).to include('Welcome to Beauty Circle')
+    expect(rendered).to include('Discover & book local')
   end
 end
