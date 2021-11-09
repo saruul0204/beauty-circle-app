@@ -18,7 +18,7 @@
         <%= render 'shared/flash' %>
         <div class="relative min-h-screen md:flex">
             <!-- sidebar -->
-            <div class="bg-white text-gray-600 w-64 space-y-6 py-7 px-2 fixed inset-y-0 left-0 top-0 bottom-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out" >
+            <div class="bg-white text-gray-600 w-64 space-y-6 py-10 px-2 fixed inset-y-0 left-0 top-0 bottom-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out" >
                 <!-- logo -->
                 <a href="#" class="text-gray-600 flex items-center space-x-2 px-4">
                     <span class="text-2xl font-extrabold">Beauty Circle</span>
@@ -105,8 +105,8 @@
                         </button>
                         <div x-show="open" class="bg-white">
                             <%= link_to 'Show all', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
-                            <%= link_to 'Show my businesses', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
-                            <%= link_to 'Add new business', businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
+                            <%= link_to 'Show my businesses', dashboard_businesses_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
+                            <%= link_to 'Add new business', new_dashboard_business_path, class:"py-2 px-12 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                         </div>
                     </div>
                     <div class="w-full flex justify-between items-center py-2.5 px-4 text-gray-600 cursor-pointer hover:bg-pink-200 hover:text-pink-600 focus:outline-none">
@@ -164,8 +164,8 @@
                                 <li><h1 aria-label="My Business" title="My Business" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">My Business</h1></li>
                                     <ul class= "space-y2">
                                         <li class="mb-1 ml-4"><%= link_to "Show all", businesses_path%></li>
-                                        <li class="mb-1 ml-4"><%= link_to "Show my businesses", businesses_path%></li>
-                                        <li class="mb-1 ml-4"><%= link_to "Add new business", businesses_path%></li>
+                                        <li class="mb-1 ml-4"><%= link_to "Show my businesses", dashboard_businesses_path%></li>
+                                        <li class="mb-1 ml-4"><%= link_to "Add new business", new_dashboard_business_path%></li>
                                     </ul>
                                 <li><%=link_to "Sign out", destroy_user_session_path, method: :delete, aria: { label:"Sign out" }, title:"Sign out", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
                             </ul>
