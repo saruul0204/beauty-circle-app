@@ -11,7 +11,8 @@ RSpec.describe 'businesses/show.html.erb', type: :view do
 
     render
 
-    expect(rendered).to include(business.name, business.country, business.city, business.address, business.open_hour,
-                                business.close_hour, business.phone_number, business.description, business.email)
+    expect(rendered).to include(business.name, business.country, business.city.name, business.address,
+                                business.open_hour, business.close_hour, business.phone_number,
+                                business.description, business.email)
   end
 end

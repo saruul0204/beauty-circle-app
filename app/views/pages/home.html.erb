@@ -27,11 +27,11 @@
 <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
   <h1 class="text-3xl font-bold text-gray-900 mb-10">Explore all salons</h1>
   <div class="grid sm:grid-cols-3 gap-4 grid-cols-2">
-    <% %w[Skopje Ohrid Struga Bitola Stip Strumica Kumanovo Tetovo Gostivar].each do |city| %>
+    <% @cities.each do |city| %>
     <div>
       <%= link_to businesses_path(salon_city: city) do %>
         <div class="bg-gray-300 h-44"></div>
-        <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in <%= city.titleize %></h3>
+        <h3 class="text-lg font-semibold text-gray-500 mt-2">Salons in <%= city.name%></h3>
       <% end %>
     </div>
     <% end %>

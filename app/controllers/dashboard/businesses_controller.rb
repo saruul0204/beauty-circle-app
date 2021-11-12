@@ -44,7 +44,7 @@ module Dashboard
     private
 
     def business_params
-      params.require(:business).permit(:name, :description, :address, :city, :country, :open_hour,
+      params.require(:business).permit(:name, :description, :address, :city_id, :country, :open_hour,
                                        :close_hour, :phone_number, :email, :facebook_url, :instagram_url)
     end
 

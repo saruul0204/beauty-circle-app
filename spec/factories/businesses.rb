@@ -2,11 +2,11 @@
 
 FactoryBot.define do
   factory :business do
+    association :city, factory: :city
     name { Faker::Company.name }
     description { Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4) }
     address { Faker::Address.street_address }
     country { Faker::Address.country }
-    city { Faker::Address.city }
     open_hour do
       Faker::Time.between_dates(from: Time.zone.today - 1, to: Time.zone.today, period: :morning).strftime('%I:%M %p')
     end

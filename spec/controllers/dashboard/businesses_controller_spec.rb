@@ -36,7 +36,7 @@ describe Dashboard::BusinessesController, type: :controller do
       it 'creates new business' do
         expect do
           post :create,
-               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city: 'Ohrid', country: 'MK',
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
                                      open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com' } }
         end.to change(Business, :count).by(1)
       end
