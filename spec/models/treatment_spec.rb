@@ -3,7 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Treatment, type: :model do
-  subject(:treatment) { create(:treatment) }
+  subject(:treatment) { create(:treatment, business: business) }
+
+  let!(:business) { create(:business, user: create(:user)) }
 
   describe 'associations' do
     it { is_expected.to belong_to(:business) }
