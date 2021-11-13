@@ -15,4 +15,10 @@ USERS.times do |i|
   rand(1..3).times { create(:business, user: user) }
 end
 
+puts 'Seeding treatments'
+Business.all.each do |business|
+  # Create couple treatments per business
+rand(3..10).times { create(:treatment, business: business) }
+end
+
 puts 'Seeding completed'
