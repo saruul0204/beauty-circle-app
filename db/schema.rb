@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_11_12_235533) do
     t.text "description"
     t.string "address"
     t.string "country"
-    t.string "city"
     t.string "open_hour"
     t.string "close_hour"
     t.string "phone_number"
@@ -30,7 +29,15 @@ ActiveRecord::Schema.define(version: 2021_11_12_235533) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_businesses_on_city_id"
     t.index ["user_id"], name: "index_businesses_on_user_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -69,6 +76,7 @@ ActiveRecord::Schema.define(version: 2021_11_12_235533) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "businesses", "cities"
   add_foreign_key "businesses", "users"
   add_foreign_key "treatments", "businesses"
 end

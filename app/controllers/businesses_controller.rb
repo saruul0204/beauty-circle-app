@@ -4,7 +4,11 @@ class BusinessesController < ApplicationController
   include Pagy::Backend
 
   def index
-    @pagy, @businesses = pagy(Business.order(created_at: :desc))
+    @pagy, @businesses = if params[:salon_city]
+                           pagy(Business.where(city_id: params[:salon_city]).order(created_at: :desc))
+                         else
+                           pagy(Business.order(created_at: :desc))
+                         end
   end
 
   def show

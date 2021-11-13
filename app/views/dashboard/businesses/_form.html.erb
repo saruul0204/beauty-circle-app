@@ -40,7 +40,7 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     City
                 </label>
-            <%= f.text_field :city, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'City'%>
+                <%= f.collection_select :city_id, City.order(:name), :id, :name, {prompt: "City"} , {required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150"} %>
             </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">

@@ -17,7 +17,7 @@ RSpec.describe 'businesses/index.html.erb', type: :view do
       pending 'Unresolved'
       render
 
-      expect(rendered).to include(business.name, business.city, business.phone_number, business.description,
+      expect(rendered).to include(business.name, business.city.name, business.phone_number, business.description,
                                   'See more information')
     end
   end
