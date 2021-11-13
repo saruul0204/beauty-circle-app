@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
 
   def index
     @pagy, @businesses = if params[:salon_city]
-                           pagy(Business.where(city: params[:salon_city]).order(created_at: :desc))
+                           pagy(Business.where(city_id: params[:salon_city]).order(created_at: :desc))
                          else
                            pagy(Business.order(created_at: :desc))
                          end

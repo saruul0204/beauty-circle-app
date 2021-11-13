@@ -14,7 +14,7 @@ RSpec.describe 'dashboard/businesses/index.html.erb', type: :view do
     it 'displays a business card' do
       render
 
-      expect(rendered).to include(business.name, business.city, business.phone_number, business.description,
+      expect(rendered).to include(business.name, business.city.name, business.phone_number, business.description,
                                   'See more information', 'Edit')
     end
   end
