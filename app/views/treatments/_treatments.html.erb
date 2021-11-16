@@ -1,0 +1,36 @@
+<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+        Our services
+        </h2>
+        <p class="text-base text-gray-700 md:text-lg">
+        Check out our services and see every information you need for your next appointment
+        </p>
+    </div>
+    <div class="max-w-screen-lg sm:mx-auto">
+        <% @treatments.each do |treatment| %>
+            <div class="flex justify-between flex-col mb-4 p-4 duration-300 transform sm:px-4 lg:flex-row bg-white border-l-4 border-pink-600 rounded-r hover:-translate-y-2">
+                <div class="mb-4 lg:mb-0">
+                    <h5 class="mb-4 text-xl font-bold leading-none sm:text-2xl">
+                    <%= treatment.name%>
+                    </h5>
+                    <div class="pr-8">
+                        <p class="text-base text-gray-700 md:text-lg">
+                            <%= treatment.description%>
+                        </p>
+                    </div>
+                    <div class="pr-8">
+                        <p class="text-base text-gray-700 md:text-lg">
+                            Time: <%= treatment.duration%>min
+                        </p>
+                    </div>
+                </div>
+                <div class="flex justify-start w-56 lg:justify-end">
+                    <span class="inline-flex items-center font-semibold transition-colors duration-200 text-pink-600 hover:text-pink-700">
+                    <%= number_to_currency(treatment.price) %>
+                    </span>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
