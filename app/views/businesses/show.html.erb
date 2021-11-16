@@ -39,7 +39,7 @@
                 </svg>
             </div>
             <div>
-              <h4 class="text-gray-500"><%= @business.phone_number %></h4>
+              <%= link_to @business.phone_number, "tel:#{@business.phone_number}", class:"text-gray-500" %>
             </div>
           </div>
         </li>
@@ -51,7 +51,7 @@
                 </svg>
             </div>
             <div>
-              <h4 class="text-gray-500"><%= @business.email %></h4>
+              <%= mail_to @business.email, @business.email, class:"text-gray-500" %>
             </div>
           </div>
         </li>
@@ -63,7 +63,7 @@
                 </svg>
             </div>
             <div>
-              <h4 class="text-gray-500"><%= @business.facebook_url %></h4>
+              <%= link_to @business.facebook_url, @business.facebook_url, class:"text-gray-500" %>
             </div>
           </div>
         </li>
@@ -75,7 +75,7 @@
                 </svg>
             </div>
             <div>
-              <h4 class="text-gray-500"><%= @business.instagram_url %></h4>
+              <%= link_to @business.instagram_url, @business.instagram_url, class:"text-gray-500" %>
             </div>
           </div>
         </li>
