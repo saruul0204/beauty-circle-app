@@ -8,6 +8,6 @@ class Business < ApplicationRecord
   belongs_to :city
 
   def full_address
-    "#{address}, #{city.name}, #{country} "
+    "#{address}, #{city.name}, #{country}"
   end
 end
