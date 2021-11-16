@@ -6,10 +6,12 @@ module Dashboard
       @treatment = Treatment.new(treatment_params)
 
       if @treatment.save
-        redirect_to @treatment.business, notice: 'You have successfully added the treatment'
+        flash[:notice] = 'You have successfully added the treatment'
       else
-        redirect_to @treatment.business, alert: 'Treatment is not saved, Please try again'
+        flash[:alert] = 'Treatment is not saved, Please try again'
       end
+
+      redirect_to @treatment.business
     end
 
     def treatment_params

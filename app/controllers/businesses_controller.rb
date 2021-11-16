@@ -13,5 +13,6 @@ class BusinessesController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
+    @treatments = @business.treatments.all.order(created_at: :desc)
   end
 end
