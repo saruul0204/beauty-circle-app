@@ -16,7 +16,7 @@ RSpec.describe Business, type: :model do
   describe 'validations' do
     it { expect(business).to be_valid }
 
-    %i[name description address city country open_hour close_hour phone_number email].each do |field_name|
+    %i[name description address country open_hour close_hour phone_number email].each do |field_name|
       it { expect(business).to validate_presence_of(field_name) }
     end
   end
