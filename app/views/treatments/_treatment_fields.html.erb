@@ -1,42 +1,48 @@
 <!-- Treatment fields -->
 <%= content_tag :div, class: "nested-fields", data: { new_record: form.object.new_record? } do %>
     <div class="flex flex-wrap">
-            <div class="w-full px-4">
-                <div class="relative w-full mb-3">
-                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                        Name
-                    </label>
-                    <%= form.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of your business'%>
-                </div>
-            </div>
-            <div class="w-full px-4">
-                <div class="relative w-full mb-3">
-                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                        Description
-                    </label>
-                    <%= form.text_area :description, required: true, rows:4, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'What type of business(hair salon, nail bar, spa, etc), how many years in business, provided services and promotions'%>
-                    </div>
+        <div class="w-full px-4">
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Name
+                </label>
+                <%= form.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of your business'%>
             </div>
         </div>
-        <div class="flex flex-wrap mb-4">
-            <div class="w-full lg:w-6/12 px-4">
-                <div class="relative w-full mb-3">
-                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                        Duration
-                    </label>
-                <%= form.text_field :duration, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'30 minutes'%>
+        <div class="w-full px-4">
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Description
+                </label>
+                <%= form.text_area :description, required: true, rows:4, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'What type of business(hair salon, nail bar, spa, etc), how many years in business, provided services and promotions'%>
                 </div>
-            </div>
-            <div class="w-full lg:w-6/12 px-4">
-                <div class="relative w-full mb-3">
-                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                        Price
-                    </label>
-                <%= form.text_field :price, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'15$'%>
-                </div>
+        </div>
+    </div>
+    <div class="flex flex-wrap mb-4">
+        <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Duration
+                </label>
+            <%= form.text_field :duration, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'30 minutes'%>
             </div>
         </div>
-        <small><%= link_to "Remove", "#", data: { action: "click->nested-form#remove_association" } %></small>
-        <%= form.hidden_field :_destroy %>
+        <div class="w-full lg:w-6/12 px-4">
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Price
+                </label>
+            <%= form.text_field :price, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'15$'%>
+            </div>
+        </div>
+    </div>
+        <%= link_to "#", data: { action: "click->nested-form#remove_association"}, class: "flex justify-end items-center focus:outline-none mr-4 text-gray-500"  do %>
+        <svg fill="none" class="w-4 mr-2" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+        </svg>
+        <p>Remove</p>
+        <% end %>
+    <hr class="my-3 border-b-1 border-gray-300">
+    <%= form.hidden_field :_destroy %>
 <% end %>
 

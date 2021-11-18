@@ -47,7 +47,7 @@ module Dashboard
     def business_params
       params.require(:business).permit(:name, :description, :address, :city_id, :country, :open_hour,
                                        :close_hour, :phone_number, :email, :facebook_url, :instagram_url,
-                                       treatments_attributes: %i[id name description price duration])
+                                       treatments_attributes: %i[id name description price duration _destroy])
     end
 
     def find_business
