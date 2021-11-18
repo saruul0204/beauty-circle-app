@@ -1,0 +1,42 @@
+<!-- Treatment fields -->
+<%= content_tag :div, class: "nested-fields", data: { new_record: form.object.new_record? } do %>
+    <div class="flex flex-wrap">
+            <div class="w-full px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Name
+                    </label>
+                    <%= form.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of your business'%>
+                </div>
+            </div>
+            <div class="w-full px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Description
+                    </label>
+                    <%= form.text_area :description, required: true, rows:4, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'What type of business(hair salon, nail bar, spa, etc), how many years in business, provided services and promotions'%>
+                    </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap mb-4">
+            <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Duration
+                    </label>
+                <%= form.text_field :duration, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'30 minutes'%>
+                </div>
+            </div>
+            <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Price
+                    </label>
+                <%= form.text_field :price, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'15$'%>
+                </div>
+            </div>
+        </div>
+        <small><%= link_to "Remove", "#", data: { action: "click->nested-form#remove_association" } %></small>
+        <%= form.hidden_field :_destroy %>
+<% end %>
+

@@ -115,7 +115,33 @@
             </div>
         </div>
     </div>
-    <%= render partial: 'treatments/form', locals: { f: f } %>
+    <!-- Treatments section -->
+    <div class="rounded-t bg-white mb-0 px-6 py-6">
+        <div class="text-center flex justify-between">
+            <h6 class="text-gray-700 text-xl font-bold">
+            Treatments
+            </h6>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>
+    <div data-controller="nested-form">
+        <template data-target="nested-form.template">
+            <%= f.fields_for :treatments, Treatment.new, child_index: 'NEW_RECORD' do |treatment| %>
+                <%= render "treatments/treatment_fields", form: treatment %>
+            <% end %>
+        </template>
+
+        <%= f.fields_for :treatments do |treatment| %>
+            <%= render "treatments/treatment_fields", form: treatment %>
+        <% end %>
+
+        <div class="mb-3" data-target="nested-form.links">
+            <%= link_to "Add treatment", "#", class: "btn btn-outline-primary", data: { action: "click->nested-form#add_association" } %>
+        </div>
+    </div>
+
     <div class="text-center w-full px-4">
         <%= button_tag type:'submit', class:"justify-center items-center text-pink-600 w-1/2 mx-auto max-w-sm rounded-md text-center bg-pink-200 py-2 px-4 inline-flex items-center focus:outline-none" do %>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
