@@ -7,6 +7,9 @@ class Business < ApplicationRecord
   has_many :treatments, dependent: :destroy
   belongs_to :city
 
+  accepts_nested_attributes_for :treatments
+  validates_associated :treatments
+
   def full_address
     "#{address}, #{city.name}, #{country}"
   end

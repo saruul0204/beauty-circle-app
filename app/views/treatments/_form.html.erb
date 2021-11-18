@@ -1,0 +1,53 @@
+<div data-controller="treatment">
+    <button data-action="treatment#showForm" class="rounded-t bg-white mb-10 px-6 py-6 w-full" >
+        <div class="text-center flex justify-between">
+            <h6 class="text-gray-700 text-xl font-bold">
+            Add treatments
+            </h6>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+        </div>
+    </button>
+<!-- Treatment form -->
+    <div class="hidden bg-white" data-treatment-target="form">
+    <%= f.fields_for :treatments do |t| %>
+        <div class="flex flex-wrap">
+            <div class="w-full px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Name
+                    </label>
+                    <%= t.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of your business'%>
+                </div>
+            </div>
+            <div class="w-full px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Description
+                    </label>
+                    <%= t.text_area :description, required: true, rows:4, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'What type of business(hair salon, nail bar, spa, etc), how many years in business, provided services and promotions'%>
+                    </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap mb-4">
+            <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Duration
+                    </label>
+                <%= t.text_field :duration, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'30 minutes'%>
+                </div>
+            </div>
+            <div class="w-full lg:w-6/12 px-4">
+                <div class="relative w-full mb-3">
+                    <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                        Price
+                    </label>
+                <%= t.text_field :price, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'15$'%>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    </div>
+</div>
