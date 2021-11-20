@@ -40,8 +40,17 @@ describe Dashboard::BusinessesController, type: :controller do
                                      open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com' } }
         end.to change(Business, :count).by(1)
       end
+      # rubocop:disable Layout/ExampleLength
+
+      it 'creates new business with treatments' do
+        expect do
+          post :create,
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
+                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com',
+                                     treatments_attributes: [name: 'Test', description: 'Desc', price: '1', duration: '10'] } }
+        end.to change(Treatment, :count).by(1)
+      end
     end
-    # rubocop:enable Layout/LineLength
 
     context 'with invalid attributes' do
       it 'doesnt create new business' do
@@ -50,8 +59,19 @@ describe Dashboard::BusinessesController, type: :controller do
                params: { business: { name: '', description: '' } }
         end.to change(Business, :count).by(0)
       end
+
+      it 'doesnt create treatment' do
+        expect do
+          post :create,
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
+                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com',
+                                     treatments_attributes: [name: '', description: '', price: '', duration: ''] } }
+        end.to change(Treatment, :count).by(0)
+      end
     end
   end
+  # rubocop:enable Layout/ExampleLength
+  # rubocop:enable Layout/LineLength
 
   describe 'GET dashboard/businesses/:id/edit' do
     let(:business) { create(:business, user: user) }
@@ -64,6 +84,7 @@ describe Dashboard::BusinessesController, type: :controller do
 
   describe 'PATCH business' do
     let(:business) { create(:business, user: user) }
+    let(:treatment) { create(:treatment, business: business) }
 
     context 'with valid attributes' do
       it 'updates business' do
@@ -72,12 +93,24 @@ describe Dashboard::BusinessesController, type: :controller do
         allow(business).to receive(:name).and_return('Another name')
         allow(business).to receive(:description).and_return('Some text')
       end
+
+      it 'updates treatment' do
+        patch :update,
+              params: { id: business.id, business: { treatments_attributes: [id: treatment.id, name: 'Another name'] } }
+        allow(treatment).to receive(:name).and_return('Another name')
+      end
     end
 
     context 'with invalid attributes' do
       it 'does not update the business' do
         patch :update,
               params: { id: business.id, business: { name: '', description: '' } }
+        expect(response).not_to be_redirect
+      end
+
+      it 'does not update treatment' do
+        patch :update,
+              params: { id: business.id, business: { treatments_attributes: [id: treatment.id, name: ''] } }
         expect(response).not_to be_redirect
       end
     end

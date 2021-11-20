@@ -3,11 +3,17 @@
 require 'rails_helper'
 
 describe 'dashboard/businesses/new.html.erb' do # rubocop:disable RSpec/DescribeClass
-  it 'displays business form' do
-    assign(:business, Business.new)
+  before { assign(:business, Business.new) }
 
+  it 'displays business form' do
     render partial: 'form'
 
     expect(rendered).to include('General Information', 'Location', 'Hours', 'Contact and socials', 'Submit')
+  end
+
+  it 'displays treatment form' do
+    render partial: 'form'
+
+    expect(rendered).to include('Name', 'Description', 'Duration', 'Price')
   end
 end
