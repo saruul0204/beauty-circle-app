@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :business do
     association :city, factory: :city
-    name { Faker::Company.name }
+    name { Faker::Company.name.parameterize.capitalize }
     description { Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4) }
     address { Faker::Address.street_address }
     country { Faker::Address.country }
