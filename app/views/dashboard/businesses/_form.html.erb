@@ -9,6 +9,7 @@
                     Name
                 </label>
                 <%= f.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of your business'%>
+                <%= field_has_error(:name, @business )%>
             </div>
         </div>
         <div class="w-full px-4">
@@ -17,6 +18,7 @@
                     Description
                 </label>
                 <%= f.text_area :description, required: true, rows:6, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'What type of business(hair salon, nail bar, spa, etc), how many years in business, provided services and promotions'%>
+                <%= field_has_error(:description, @business )%>
                 </div>
         </div>
     </div>
@@ -33,6 +35,7 @@
                     Address
                 </label>
                 <%= f.text_field :address, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Address of your business'%>
+                <%= field_has_error(:address, @business )%>
             </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
@@ -41,6 +44,8 @@
                     City
                 </label>
                 <%= f.collection_select :city_id, City.order(:name), :id, :name, {prompt: "City"} , {required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150"} %>
+                <%= field_has_error(:city_id, @business )%>
+
             </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
@@ -48,7 +53,8 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Country
                 </label>
-            <%= f.text_field :country, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Country'%>
+                <%= f.text_field :country, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Country'%>
+                <%= field_has_error(:country, @business )%>
             </div>
         </div>
     </div>
@@ -63,7 +69,8 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Opening time
                 </label>
-            <%= f.text_field :open_hour, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'10:00 am'%>
+                <%= f.text_field :open_hour, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'10:00 am'%>
+                <%= field_has_error(:open_hour, @business )%>
             </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
@@ -71,7 +78,8 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Closing time
                 </label>
-            <%= f.text_field :close_hour, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'8:00 pm'%>
+                <%= f.text_field :close_hour, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'8:00 pm'%>
+                <%= field_has_error(:close_hour, @business )%>
             </div>
         </div>
     </div>
@@ -85,7 +93,8 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Phone number
                 </label>
-            <%= f.text_field :phone_number, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'077-777-777'%>
+                <%= f.text_field :phone_number, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'077-777-777'%>
+                <%= field_has_error(:phone_number, @business )%>
             </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
@@ -93,7 +102,8 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Email
                 </label>
-            <%= f.text_field :email, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'info@business.com'%>
+                <%= f.text_field :email, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'info@business.com'%>
+                <%= field_has_error(:email, @business )%>
             </div>
         </div>
     </div>
@@ -103,7 +113,9 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Facebook url
                 </label>
-            <%= f.text_field :facebook_url, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'https://www.facebook.com/'%>
+                <%= f.text_field :facebook_url, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'https://www.facebook.com/'%>
+                <%= field_has_error(:facebook_url, @business )%>
+
             </div>
         </div>
         <div class="w-full lg:w-6/12 px-4">
@@ -111,7 +123,8 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Instagram url
                 </label>
-            <%= f.text_field :instagram_url, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'https://www.instagram.com/'%>
+                <%= f.text_field :instagram_url, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'https://www.instagram.com/'%>
+                <%= field_has_error(:facebook_url, @business )%>
             </div>
         </div>
     </div>
@@ -128,7 +141,7 @@
     </div>
     <div data-controller="nested-form">
         <template data-target="nested-form.template">
-            <%= f.fields_for :treatments, Treatment.new, child_index: 'NEW_RECORD' do |treatment| %>
+            <%= f.fields_for :treatments, @treatment = Treatment.new, child_index: 'NEW_RECORD' do |treatment| %>
                 <%= render "treatments/treatment_fields", form: treatment %>
             <% end %>
         </template>
