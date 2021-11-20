@@ -21,6 +21,10 @@ RSpec.describe Business, type: :model do
     end
   end
 
+  describe 'nested attributes' do
+    it { is_expected.to accept_nested_attributes_for(:treatments) }
+  end
+
   describe 'method full_address' do
     let(:new_city) { create(:city, name: 'Struga') }
     let(:business) { create :business, address: '1st street', city: new_city, user: user, country: 'Macedonia' }
