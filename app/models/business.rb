@@ -15,8 +15,7 @@ class Business < ApplicationRecord
   end
 
   def self.search(params)
-    self.joins(:treatments)
-    .where('business.name ILIKE ? OR treatments.name ILIKE ?', "%#{params}%", "%#{params}%")
+    joins(:treatments)
+      .where('business.name ILIKE ? OR treatments.name ILIKE ?', "%#{params}%", "%#{params}%")
   end
-
 end
