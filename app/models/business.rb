@@ -13,4 +13,10 @@ class Business < ApplicationRecord
   def full_address
     "#{address}, #{city.name}, #{country}"
   end
+
+  def self.search(params)
+    self.joins(:treatments)
+    .where('business.name ILIKE ? OR treatments.name ILIKE ?', "%#{params}%", "%#{params}%")
+  end
+
 end

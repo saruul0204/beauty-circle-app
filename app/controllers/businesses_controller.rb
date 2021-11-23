@@ -9,6 +9,9 @@ class BusinessesController < ApplicationController
                          else
                            pagy(Business.order(created_at: :desc))
                          end
+    if params[:q]
+      @businesses = Business.search(params[:q])
+    end
   end
 
   def show
