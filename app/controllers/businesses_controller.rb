@@ -6,10 +6,11 @@ class BusinessesController < ApplicationController
   def index
     @pagy, @businesses = if params[:salon_city]
                            pagy(Business.where(city_id: params[:salon_city]).order(created_at: :desc))
+                         elsif params[:q]
+                           pagy(Business.search(params[:q]).order(created_at: :desc))
                          else
                            pagy(Business.order(created_at: :desc))
                          end
-    @businesses = Business.search(params[:q]) if params[:q]
   end
 
   def show
