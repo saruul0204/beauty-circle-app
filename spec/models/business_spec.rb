@@ -7,6 +7,8 @@ RSpec.describe Business, type: :model do
 
   let(:user) { create :user }
 
+  let!(:business1) { create(:business, name: 'Test', user: user) }
+
   describe 'associations' do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to have_many(:treatments) }
@@ -31,6 +33,15 @@ RSpec.describe Business, type: :model do
 
     it 'creates full address' do
       expect(business.full_address).to eq('1st street, Struga, Macedonia')
+    end
+  end
+
+  describe 'method search' do
+
+    it 'finds searched business by name' do
+      results = Business.search(name:'Test')
+      byebug
+      expect(results).to eq([business1])
     end
   end
 end
