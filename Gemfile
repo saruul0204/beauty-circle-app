@@ -74,3 +74,4 @@ gem 'simplecov', require: false, group: :test
 gem 'devise'
 gem 'email_validator'
 gem 'pagy', '~> 3.5'
+gem 'activeadmin'
