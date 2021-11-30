@@ -15,6 +15,8 @@ CITIES.each do |city|
 end
 
 puts 'Seeding users and businesses'
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
 USERS.times do |i|
   user = i.zero? ? create(:user, email: 'user@test.com') : create(:user)
 
@@ -28,4 +30,4 @@ Business.all.each do |business|
 rand(3..10).times { create(:treatment, business: business) }
 end
 
-puts 'Seeding completed'AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+puts 'Seeding completed'

@@ -3,10 +3,10 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :businesses, only: %i[index show]
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  resources :businesses, only: %i[index show]
   get '/pages/home'
   get '/pages/about'
   get '/pages/contact'
