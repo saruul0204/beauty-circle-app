@@ -33,4 +33,22 @@ RSpec.describe Business, type: :model do
       expect(business.full_address).to eq('1st street, Struga, Macedonia')
     end
   end
+
+  describe 'method search' do
+    before { create(:treatment, business: business) }
+
+    let!(:new_city) { create(:city, name: 'Struga') }
+    let!(:business) { create :business, name: 'Test', city_id: new_city.id, user: user }
+    let!(:business1) { create :business, name: 'Exx', city_id: new_city.id, user: user }
+
+    it 'finds searched business by name' do
+      results = described_class.search(name: 'test', city_name: 'struga')
+      expect(results).to eq([business])
+    end
+
+    it 'doesnt finds searched business by name' do
+      results = described_class.search(name: 'exx', city_name: 'ohrid')
+      expect(results).not_to eq([business1])
+    end
+  end
 end

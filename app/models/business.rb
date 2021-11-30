@@ -13,4 +13,9 @@ class Business < ApplicationRecord
   def full_address
     "#{address}, #{city.name}, #{country}"
   end
+
+  def self.search(params)
+    joins(:treatments, :city).where('(businesses.name ILIKE ? OR treatments.name ILIKE ?) AND cities.name ILIKE ?',
+                                    "%#{params[:name]}%", "%#{params[:name]}%", "%#{params[:city_name]}%").distinct
+  end
 end
