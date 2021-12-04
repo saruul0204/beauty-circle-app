@@ -23,7 +23,7 @@ RSpec.describe BusinessesController, type: :controller do
 
     context 'with businesses with search param' do
       it 'has a success status code' do
-        get :index, params: { name: business.name, city_name: business.city.name }
+        get :index, params: { search: { name: business.name, city_name: business.city.name } }
         expect(response).to have_http_status(:success)
       end
     end
