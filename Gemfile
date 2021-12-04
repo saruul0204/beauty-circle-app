@@ -36,6 +36,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do
@@ -51,7 +53,6 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
@@ -74,3 +75,4 @@ gem 'simplecov', require: false, group: :test
 gem 'devise'
 gem 'email_validator'
 gem 'pagy', '~> 3.5'
+gem 'activeadmin'
