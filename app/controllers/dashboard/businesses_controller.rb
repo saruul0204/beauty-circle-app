@@ -8,7 +8,9 @@ module Dashboard
       @businesses = current_user.businesses
     end
 
-    def show; end
+    def show
+      @treatments = @business.treatments.order(created_at: :desc)
+    end
 
     def new
       @business = Business.new
