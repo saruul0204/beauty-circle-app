@@ -37,9 +37,9 @@ module Dashboard
     end
 
     def destroy
-      @business.destroy
+      @business.update!(deleted_at: Time.zone.now)
 
-      redirect_to businesses_path
+      redirect_to dashboard_businesses_path
     end
 
     private
