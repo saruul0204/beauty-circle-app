@@ -5,7 +5,7 @@ module Dashboard
     before_action :find_business, only: %i[show edit update destroy]
 
     def index
-      @businesses = current_user.businesses
+      @businesses = current_user.businesses.active
     end
 
     def show; end
@@ -38,7 +38,7 @@ module Dashboard
 
     def destroy
       @business.update!(deleted_at: Time.zone.now)
-
+      flash[:notice] = "You have deleted #{@business.name.to_s.capitalize} business."
       redirect_to dashboard_businesses_path
     end
 
@@ -51,7 +51,7 @@ module Dashboard
     end
 
     def find_business
-      @business = current_user.businesses.find(params[:id])
+      @business = current_user.businesses.active.find(params[:id])
     end
   end
 end
