@@ -46,9 +46,27 @@ RSpec.describe Business, type: :model do
       expect(results).to eq([business])
     end
 
-    it 'doesnt finds searched business by name' do
+    it 'doesnt find searched business by name' do
       results = described_class.search(name: 'exx', city_name: 'ohrid')
       expect(results).not_to eq([business1])
+    end
+  end
+
+  describe 'scope active' do
+    context 'when business is active' do
+      let!(:business) { create :business, user: user }
+
+      it 'can find the business' do
+        expect(described_class.active).to eq([business])
+      end
+    end
+
+    context 'when business is inactive' do
+      let!(:business) { create :business, deleted_at: '2021-12-06 22:12:48.508919000 +0000', user: user }
+
+      it 'cant find the business' do
+        expect(described_class.active).not_to eq([business])
+      end
     end
   end
 end
