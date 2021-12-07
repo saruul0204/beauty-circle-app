@@ -119,10 +119,10 @@ describe Dashboard::BusinessesController, type: :controller do
   describe 'soft delete business' do
     let!(:business) { create(:business, user: user) }
 
-    it 'doesnt delete business from database' do
+    it 'delete active business from database' do
       expect do
         delete :destroy, params: { id: business.id }
-      end.to change(Business, :count).by(0)
+      end.to change(Business.active, :count).by(-1)
     end
   end
 end
