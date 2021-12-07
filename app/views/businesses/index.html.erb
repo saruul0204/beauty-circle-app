@@ -15,6 +15,9 @@
 
         <!-- Box-1 -->
         <div class="grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8 space-y-4 sm:space-y-0">
+            <% if @businesses.empty? %>
+                <h1 class="text-xl font-gray-700 font-bold m-2">We couldn't find any salons that match your search term.</h1>
+            <% end %>
             <% @businesses.each do |business|%>
                 <div class="bg-white rounded-md shadow-md hover:shadow-lg transform transition duration-500 hover:scale-105 flex flex-col items-stretch">
                     <%= image_tag 'salon_photo.jpeg', class:"object-cover w-full h-full rounded-tl-md rounded-tr-md", style: 'height: 250px; max-height: 250px;', alt:"salon image"%>
