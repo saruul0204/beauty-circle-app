@@ -18,4 +18,6 @@ class Business < ApplicationRecord
     joins(:treatments, :city).where('(businesses.name ILIKE ? OR treatments.name ILIKE ?) AND cities.name ILIKE ?',
                                     "%#{params[:name]}%", "%#{params[:name]}%", "%#{params[:city_name]}%").distinct
   end
+
+  scope :active, -> { where(deleted_at: nil) }
 end
