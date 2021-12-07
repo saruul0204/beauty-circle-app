@@ -20,4 +20,14 @@ RSpec.describe 'businesses/index.html.erb', type: :view do
                                   'See more information')
     end
   end
+
+  context 'with no businesses' do
+    it 'displays message not found' do
+      assign(:businesses, [])
+
+      render
+
+      expect(rendered).to include("We couldn't find any salons that match your search term.")
+    end
+  end
 end
