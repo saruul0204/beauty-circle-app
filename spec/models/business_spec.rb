@@ -62,7 +62,7 @@ RSpec.describe Business, type: :model do
     end
 
     context 'when business is inactive' do
-      let!(:business) { create :business, deleted_at: '2021-12-06 22:12:48.508919000 +0000', user: user }
+      let!(:business) { create :business, deleted_at: Time.zone.now, user: user }
 
       it 'cant find the business' do
         expect(described_class.active).not_to eq([business])
