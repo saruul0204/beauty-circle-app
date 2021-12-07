@@ -6,6 +6,7 @@ class Business < ApplicationRecord
   belongs_to :user
   has_many :treatments, inverse_of: :business, dependent: :destroy
   belongs_to :city
+  has_many_attached :images, dependent: :destroy
 
   accepts_nested_attributes_for :treatments, reject_if: :all_blank, allow_destroy: true
   validates_associated :treatments
