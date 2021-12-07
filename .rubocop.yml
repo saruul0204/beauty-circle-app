@@ -24,3 +24,6 @@ RSpec/MultipleExpectations:
 
 Metrics/BlockLength:
   Max: 100
+
+Metrics/AbcSize:
+  Max: 30
