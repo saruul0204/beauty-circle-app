@@ -128,6 +128,21 @@
             </div>
         </div>
     </div>
+    <hr class="mt-6 border-b-1 border-gray-300">
+    <h6 class="text-gray-400 text-sm mt-3 mb-6 font-bold uppercase px-4">
+        Gallery
+    </h6>
+    <div class="flex flex-wrap mb-8">
+        <div class="w-full px-4">
+            <div class="relative w-full mb-3">
+                <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                    Add images for your business
+                </label>
+                <%= f.file_field :images, multiple: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150"%>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-6 border-b-1 border-gray-300">
     <!-- Treatments section -->
     <div class="rounded-t bg-white mb-10 px-6 py-6">
         <div class="text-center flex justify-between">
