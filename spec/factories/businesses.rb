@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  link_to_default_image = Rails.root.join('spec/fixtures/files/salon_photo.jpeg')
   factory :business do
     association :city, factory: :city
     association :user, factory: :user
@@ -18,5 +19,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     facebook_url { 'https://www.facebook.com/' }
     instagram_url { 'https://www.instagram.com/' }
+    images { Rack::Test::UploadedFile.new link_to_default_image, 'image/jpeg' }
   end
 end
