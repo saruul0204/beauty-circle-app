@@ -139,6 +139,7 @@
                     Add images for your business
                 </label>
                 <%= f.file_field :images, multiple: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150"%>
+                <%= field_has_error(:images, @business )%>
             </div>
         </div>
     </div>
