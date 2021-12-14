@@ -8,7 +8,7 @@ class Business < ApplicationRecord
   belongs_to :city
   has_many_attached :images, dependent: :destroy
   validates :images, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
-                     size: { less_than: 5.megabytes, message: 'must be less than 2MB in size' }
+                     size: { less_than: 5.megabytes, message: 'must be less than 5MB in size' }
   validate :image_count
   accepts_nested_attributes_for :treatments, reject_if: :all_blank, allow_destroy: true
   validates_associated :treatments

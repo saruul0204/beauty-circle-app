@@ -19,6 +19,10 @@ RSpec.describe Business, type: :model do
     %i[name description address country open_hour close_hour phone_number email].each do |field_name|
       it { expect(business).to validate_presence_of(field_name) }
     end
+
+    it { is_expected.to validate_attached_of(:images) }
+    it { is_expected.to validate_content_type_of(:images).allowing('image/png', 'image/jpg', 'image/jpeg') }
+    it { is_expected.to validate_content_type_of(:images).rejecting('text/plain', 'text/xml') }
   end
 
   describe 'nested attributes' do
