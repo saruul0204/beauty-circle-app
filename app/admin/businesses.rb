@@ -2,7 +2,7 @@
 
 ActiveAdmin.register Business do
   permit_params :name, :description, :address, :country, :open_hour, :close_hour, :phone_number, :email, :facebook_url,
-                :instagram_url, :user_id, :city_id
+                :instagram_url, :user_id, :city_id, images: []
 
   form do |f|
     f.semantic_errors(*f.object.errors.attribute_names)
@@ -20,6 +20,7 @@ ActiveAdmin.register Business do
       f.input :email
       f.input :facebook_url
       f.input :instagram_url
+      f.input :images, as: :file, input_html: { multiple: true }
     end
 
     f.actions
