@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe Dashboard::BusinessesController, type: :controller do
+describe Dashboard::BusinessesController, type: :controller do # rubocop:disable Metrics/BlockLength
   let!(:user) { create :user }
 
   before { sign_in user }
