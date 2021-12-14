@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe Dashboard::BusinessesController, type: :controller do
+describe Dashboard::BusinessesController, type: :controller do # rubocop:disable Metrics/BlockLength
   let!(:user) { create :user }
 
   before { sign_in user }
@@ -15,7 +15,7 @@ describe Dashboard::BusinessesController, type: :controller do
   end
 
   describe 'GET dashboard/businesses/:id' do
-    let(:business) { create(:business, user: user) }
+    let!(:business) { create(:business, name: 'Test name', user: user) }
 
     it 'has a 200 status code' do
       get :show, params: { id: business.id }
@@ -33,11 +33,13 @@ describe Dashboard::BusinessesController, type: :controller do
 
   describe 'POST create business' do
     context 'with valid attributes' do
+      link_to_default_image = Rails.root.join('spec/fixtures/files/salon_photo.jpeg')
+
       it 'creates new business' do
         expect do
           post :create,
                params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
-                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com' } }
+                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com', images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')] } }
         end.to change(Business, :count).by(1)
       end
       # rubocop:disable Layout/ExampleLength
@@ -46,7 +48,7 @@ describe Dashboard::BusinessesController, type: :controller do
         expect do
           post :create,
                params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
-                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com',
+                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com', images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')],
                                      treatments_attributes: [name: 'Test', description: 'Desc', price: '1', duration: '10'] } }
         end.to change(Treatment, :count).by(1)
       end
