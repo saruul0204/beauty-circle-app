@@ -8,7 +8,7 @@ describe Admin::BusinessesController, type: :controller do # rubocop:disable Met
   let(:page) { Capybara::Node::Simple.new(response.body) }
   let!(:new_business) { create :business }
   let(:admin_user) { create :admin_user }
-  let!(:valid_attributes) do
+  let(:valid_attributes) do
     attributes_for(:business).merge(user_id: new_business.user_id, city_id: new_business.city_id)
   end
   let(:invalid_attributes) { { user_id: '' } }
@@ -90,8 +90,6 @@ describe Admin::BusinessesController, type: :controller do # rubocop:disable Met
 
   describe 'business create' do
     context 'with valid params' do
-      link_to_default_image = Rails.root.join('spec/fixtures/files/salon_photo.jpeg')
-
       it 'creates a new business' do
         expect do
           post :create, params: { business: valid_attributes }
