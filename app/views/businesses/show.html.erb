@@ -83,9 +83,13 @@
   </div>
   <div class="w-full md:w-5/12 px-4 mr-auto ml-auto mt-4">
     <% if @business.images.attached? %>
+    <div data-controller="lightbox">
       <% @business.images.each do |image| %>
-        <%= image_tag(image, width: 200, class:"align-middle rounded-t-lg") %>
+
+        <%= image_tag(image, class:"h-48 w-full object-cover align-middle rounded-t-lg", data: { src: "/assets/#{image.blob.filename}" }) %>
+
       <% end %>
+    </div>
     <% end %>
   </div>
 </div>
