@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 describe 'shared/navbar' do # rubocop:disable RSpec/DescribeClass
-
-
   it 'displays navbar links' do
     assign(I18n.available_locales, [])
 
