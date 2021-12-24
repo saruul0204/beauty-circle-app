@@ -27,7 +27,7 @@ RSpec.describe 'businesses/index.html.erb', type: :view do
 
       render
 
-      expect(rendered).to include("We couldn't find any salons that match your search term.")
+      expect(rendered).to include(t('businesses.index.empty_h1'))
     end
   end
 end

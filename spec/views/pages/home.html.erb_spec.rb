@@ -10,6 +10,6 @@ describe 'pages/home.html.erb' do # rubocop:disable RSpec/DescribeClass
 
     render
 
-    expect(rendered).to include('Discover & book local')
+    expect(rendered).to include(t('pages.home.header_part1'))
   end
 end
