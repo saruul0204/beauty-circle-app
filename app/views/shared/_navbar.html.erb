@@ -4,19 +4,24 @@
       <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Beauty Circle</span>
     </a>
     <ul class="flex items-center hidden space-x-8 lg:flex">
-      <li><%= link_to "Browse salons", businesses_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
-      <li><%= link_to "About", pages_about_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
-      <li><%= link_to "Contact us", pages_contact_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
+      <li><%= link_to t('.browse_salons'), businesses_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
+      <li><%= link_to t('.about'), pages_about_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
+      <li><%= link_to t('.contact_us'), pages_contact_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
       </ul>
     <ul class="flex items-center hidden space-x-8 lg:flex">
       <% if user_signed_in? %>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
-        <li><%= link_to "Dashboard", dashboard_root_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none" %></li>
+        <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+        <li><%= link_to t('.dashboard'), dashboard_root_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none" %></li>
 
       <% else %>
-      <li><%= link_to "Sign in", new_user_session_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
-      <li><%= link_to "Sign up", new_user_registration_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none" %></li>
+      <li><%= link_to t('.sign_in'), new_user_session_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+      <li><%= link_to t('.sign_up'), new_user_registration_path, class:"inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-pink-600 transition duration-200 rounded shadow-md md:w-auto bg-pink-200 hover:bg-pink-300 focus:shadow-outline focus:outline-none" %></li>
       <% end %>
+      <ul>
+  <% I18n.available_locales.each do |l|%>
+    <li><%= link_to l, url_for(locale: l), class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" %></li>
+  <% end %>
+</ul>
     </ul>
     <!-- Mobile menu -->
     <div data-controller="dropdown" class="lg:hidden z-40">
@@ -44,15 +49,15 @@
           </div>
           <nav>
             <ul class="space-y-4">
-              <li><%= link_to "Browse salons", businesses_path, aria:{ label:"Posts" }, title:"Our posts", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
-              <li><%= link_to "About", pages_about_path, aria:{ label:"Contact" }, title:"Contact", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
-              <li><%= link_to "Contact", pages_contact_path, aria:{ label:"About us" }, title:"About us", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
+              <li><%= link_to t('.browse_salons'), businesses_path, aria:{ label:"Browse salons" }, title:"Browse salons", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
+              <li><%= link_to t('.about'), pages_about_path, aria:{ label:"About us" }, title:"About us", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
+              <li><%= link_to t('.contact_us'), pages_contact_path, aria:{ label:"Contact" }, title:"Contact", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
                <% if user_signed_in? %>
-                  <li><%= link_to "Dashboard", root_path, aria:{ label:"Dashboard" }, title:"Dashboard", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
-                  <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600" %></li>
+                  <li><%= link_to t('.dashboard'), root_path, aria:{ label:"Dashboard" }, title:"Dashboard", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
+                  <li><%= link_to t('.sign_out'), destroy_user_session_path, method: :delete, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600" %></li>
                  <% else %>
-                  <li><%= link_to "Sign in", new_user_session_path, aria:{ label:"Sign in" }, title:"Sign in", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
-                  <li><%= link_to "Sign up", new_user_registration_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600", aria:{ label:"Sign up" }, title:"Sign up"%></li>
+                  <li><%= link_to t('.sign_in'), new_user_session_path, aria:{ label:"Sign in" }, title:"Sign in", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600"%></li>
+                  <li><%= link_to t('.sign_up'), new_user_registration_path, class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-pink-600", aria:{ label:"Sign up" }, title:"Sign up"%></li>
                 <% end %>
             </ul>
           </nav>

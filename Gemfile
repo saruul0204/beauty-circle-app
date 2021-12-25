@@ -77,3 +77,6 @@ gem 'email_validator'
 gem 'pagy', '~> 3.5'
 gem 'activeadmin'
 gem 'active_storage_validations'
+
+# add internationalization
+gem 'rails-i18n'
