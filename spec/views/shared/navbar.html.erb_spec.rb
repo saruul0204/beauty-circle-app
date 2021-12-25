@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'shared/navbar' do
+describe 'shared/navbar' do #rubocop:disable  RSpec/DescribeClass
   before do
     controller.request.path_parameters[:controller] = 'pages'
     controller.request.path_parameters[:action] = 'home'
