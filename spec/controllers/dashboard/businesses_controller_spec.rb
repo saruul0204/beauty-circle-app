@@ -33,7 +33,7 @@ describe Dashboard::BusinessesController, type: :controller do # rubocop:disable
 
   describe 'POST create business' do
     context 'with valid attributes' do
-      link_to_default_image = Rails.root.join('spec/fixtures/files/salon_photo.jpeg')
+      link_to_default_image = Rails.root.join('spec/fixtures/files/salon_photo.jpg')
 
       it 'creates new business' do
         expect do
