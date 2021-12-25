@@ -8,6 +8,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.2",
     "autoprefixer": "^10.3.4",
+    "lightgallery": "^2.3.0",
     "postcss": "^8.3.6",
     "stimulus": "^3.0.1",
     "stimulus-lightbox": "^2.0.0",
