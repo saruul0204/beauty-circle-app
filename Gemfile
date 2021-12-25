@@ -35,7 +35,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0.0'
   gem 'shoulda-matchers', '~> 5.0'
-  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'capybara'
   gem "letter_opener"
@@ -81,3 +80,5 @@ gem 'active_storage_validations'
 
 # add internationalization
 gem 'rails-i18n'
+
+gem 'factory_bot_rails'
