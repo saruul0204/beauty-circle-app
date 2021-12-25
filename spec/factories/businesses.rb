@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  link_to_first_image = Rails.root.join('spec/fixtures/files/salon_photo.jpeg')
-  link_to_2nd_image = Rails.root.join('spec/fixtures/files/about-image.jpg')
-  link_to_3rd_image = Rails.root.join('spec/fixtures/files/nordic-spa1.jpg')
+  link_to_files = Dir[Rails.root.join('spec/fixtures/files/*')]
+  attach_new_images = []
+
+  link_to_files.each do |img|
+    attach_new_images.push(Rack::Test::UploadedFile.new(img, 'image/jpeg'))
+  end
 
   factory :business do
     association :city, factory: :city
@@ -22,12 +25,6 @@ FactoryBot.define do
     email { Faker::Internet.email }
     facebook_url { 'https://www.facebook.com/' }
     instagram_url { 'https://www.instagram.com/' }
-    images do
-      [
-        Rack::Test::UploadedFile.new(link_to_first_image, 'image/jpeg'),
-        Rack::Test::UploadedFile.new(link_to_2nd_image, 'image/jpg'),
-        Rack::Test::UploadedFile.new(link_to_3rd_image, 'image/jpg')
-      ]
-    end
+    images { attach_new_images }
   end
 end

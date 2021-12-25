@@ -2,9 +2,11 @@
 
 require 'rails_helper'
 
-describe 'shared/navbar' do # rubocop:disable RSpec/DescribeClass
+describe 'shared/navbar' do
+  # before { I18n.available_locales = %i[en mk] }
+
   it 'displays navbar links' do
-    assign(I18n.available_locales, [])
+    # assign(, [])
 
     render partial: 'shared/navbar'
 
