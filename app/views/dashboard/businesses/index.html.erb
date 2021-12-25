@@ -1,4 +1,4 @@
-<h1 class="text-2xl uppercase font-bold from-current mb-8">Show my businesses</h1>
+<h1 class="text-2xl uppercase font-bold from-current mb-8"><%= t('.h1')%></h1>
 <div class="grid sm:grid-cols-1 lg:grid-cols-2 sm:gap-8 space-y-4 sm:space-y-0">
     <% @businesses.each do |business|%>
         <div class="bg-white rounded-md shadow-md hover:shadow-lg transform transition duration-500 hover:scale-105 flex flex-col items-stretch">
@@ -25,13 +25,13 @@
                 <p class="text-md tracking-normal mb-2"><%= business.description %></p>
             </div>
             <%= link_to dashboard_business_path(business), class:"text-pink-600 py-2 mt-auto mb-2 focus:outline-none hover:text-pink-700 text-lg px-4 pb-2" do %>
-                See more information
+                <%= t('.see_btn') %>
                 <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
                     <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
                 </svg>
             <% end %>
             <%= link_to edit_dashboard_business_path(business), class:"text-pink-600 py-2 mt-auto mb-2 focus:outline-none hover:text-pink-700 text-lg px-4 pb-2" do %>
-                Edit
+                <%= t('.edit') %>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                 </svg>

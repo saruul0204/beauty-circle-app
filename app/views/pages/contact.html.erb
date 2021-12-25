@@ -3,10 +3,10 @@
     <div class="flex flex-col mb-16 sm:text-center sm:mb-0">
       <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-        Contact Beauty Circle maintainers
+          <%= t('.h2') %>
         </h2>
         <p class="text-base text-gray-700 md:text-lg">
-          In case of a question or suggestions, please fill out the form bellow and the Beauty Circle team will get back to you ASAP.
+          <%= t('.p1') %>
         </p>
       </div>
     </div>
@@ -17,35 +17,35 @@
         <div class="flex flex-wrap -m-2">
           <div class="p-2 w-1/2">
               <div class="relative text-center">
-                  <%= f.label :full_name,'Name', class: "label leading-7 text-sm text-gray-600" %>
+                  <%= f.label :full_name, t('.name'), class: "label leading-7 text-sm text-gray-600" %>
                   <%= f.text_field :full_name, required: true, class: "input w-full bg-white rounded shadow focus:ring-2 focus:ring-pink-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", placeholder:"John Doe"%>
                   <%= field_has_error(:full_name, @contact)%>
               </div>
           </div>
           <div class="p-2 w-1/2">
               <div class="relative text-center">
-                  <%= f.label :email, class: "label leading-7 text-sm text-gray-600"%>
+                  <%= f.label :email, t('.email'), class: "label leading-7 text-sm text-gray-600"%>
                   <%= f.email_field :email, required: true, class: "email w-full bg-white rounded shadow focus:ring-2 focus:ring-pink-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out", placeholder:"johndoe@mail.com"%>
                   <%= field_has_error(:email, @contact)%>
               </div>
           </div>
           <div class="p-2 w-full">
               <div class="relative text-center">
-                  <%= f.label :message, class: "label leading-7 text-sm text-gray-600"%>
+                  <%= f.label :message, t('.message'), class: "label leading-7 text-sm text-gray-600"%>
                   <%= f.text_area :message, required: true, class: "textarea w-full bg-white rounded shadow focus:ring-2 focus:ring-pink-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out", placeholder:"This is your message"%>
                   <%= field_has_error(:message, @contact)%>
               </div>
           </div>
           <div class="p-2 w-full">
-              <%= f.submit 'Contact Us', class: "flex mx-auto text-pink-600 bg-pink-200 border-0 py-2 px-8 focus:outline-none hover:bg-pink-300 rounded text-lg" %>
+              <%= f.submit t('.contact_us'), class: "flex mx-auto text-pink-600 bg-pink-200 border-0 py-2 px-8 focus:outline-none hover:bg-pink-300 rounded text-lg" %>
           </div>
         </div>
       <% end %>
         <div class="flex flex-wrap -m-2">
           <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
             <%= mail_to "contact@beautycircle.com", "contact@beautycircle.com", class:"text-gray-500" %>
-              <p class="leading-normal my-5">312 Lovely St.
-                <br>Ohrid, 6000
+              <p class="leading-normal my-5"><%= t('.address1') %>
+                <br><%= t('.address2') %>
               </p>
             <span class="inline-flex">
              <%= link_to "https://www.facebook.com/", class:"text-gray-500" do %>

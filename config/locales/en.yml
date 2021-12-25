@@ -1,33 +1,71 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  shared:
+    navbar:
+      browse_salons: 'Browse salons'
+      about: 'About'
+      contact_us: 'Contact us'
+      dashboard: 'Dashboard'
+      sign_in: 'Sign in'
+      sign_up: 'Sign up'
+      sign_out: 'Sign out'
+
+    footer:
+      cookies: 'Cookies'
+      copyright: 'Copyright'
+      privacy: 'Privacy'
+      terms_&_conditions: 'Termns & Conditions'
+
+  businesses:
+    index:
+      h1: 'Browse all salons'
+      empty_h1: 'We couldn’t find any salons that match your search term.'
+      see_btn: 'See more information'
+
+    show:
+      h3: 'General information'
+      open: 'Open'
+
+  dashboard:
+    businesses:
+      index:
+        h1: 'Show my businesses'
+        see_btn: 'See more information'
+        edit: 'Edit'
+
+      show:
+        h3: 'General information'
+        open: 'Open'
+
+  treatments:
+    treatments:
+      h2: 'Our services'
+      p: 'Check out our services and see every information you need for your next appointment'
+
+  pages:
+    home:
+      header_part1: 'Discover your local'
+      header_part2: ' beauty professionals'
+      header_paragraph: 'Beauty Circle is the best way to look up your next hair and beauty treatments online. Find salons in your area, read reviews, book (rebook and reschedule), on the go. Whichever treatment you’re after – haircut, nails, massage – we’ll help you sort a salon slot, 24/7.'
+      cities_section_header: 'Explore all salons'
+      salons_in: 'Salons in'
+      cta_section_h2: 'Are you a beauty professional?'
+      cta_section_p: 'We don’t just help you run your business, we help you grow it. Earn more money, get exposure to millions of clients, and keep your regulars coming back!'
+      cta_section_btn: 'Sign up and set your your business up'
+
+    about:
+      about_h2: 'About Beauty Circle'
+      about_p: 'Beauty Circle is where you will find all beauty salons in Macedonia with their information and treatments they provide. Now you can book an appointment to your favorite salon ONLINE.'
+      about_btn: 'Get in touch for more information'
+      join_us: 'Join Us'
+      join_us_p: 'If you own a beauty related business join our platform to manage all your appointments online from anywhere and have a chance to reach more customers!'
+      join_us_btn: 'Sign up and set your your business up'
+
+    contact:
+      h2: 'Contact Beauty Circle maintainers'
+      p1: 'In case of a question or suggestions, please fill out the form bellow and the Beauty Circle team will get back to you ASAP.'
+      name: 'Name'
+      email: 'Email'
+      message: 'Message'
+      contact_us: 'Contact Us'
+      address1: '312 Lovely St.'
+      address2: 'Ohrid, 6000'

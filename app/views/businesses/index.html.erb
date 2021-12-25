@@ -1,6 +1,6 @@
 <div class="min-h-screen bg-gray-100 flex justify-center items-center py-20">
     <div class="container mx-auto p-12 bg-gray-100 rounded-xl">
-        <h1 class="text-4xl uppercase font-bold from-current mb-8">Browse all salons</h1>
+        <h1 class="text-4xl uppercase font-bold from-current mb-8"><%= t('.h1')%></h1>
         <!-- Search form-->
         <%= form_tag(businesses_path, method: :get, class:"flex flex-col md:w-9/12 my-6 md:flex-row") do %>
             <%= text_field_tag('search[name]', "", class:"flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-pink-600 focus:outline-none focus:shadow-outline", placeholder:"Search...", required: true) %>
@@ -16,7 +16,7 @@
         <!-- Box-1 -->
         <div class="grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-3 lg:gap-8 space-y-4 sm:space-y-0">
             <% if @businesses.empty? %>
-                <h1 class="text-xl font-gray-700 font-bold m-2">We couldn't find any salons that match your search term.</h1>
+                <h1 class="text-xl font-gray-700 font-bold m-2"><%= t('.empty_h1')%></h1>
             <% end %>
             <% @businesses.each do |business|%>
                 <div class="bg-white rounded-md shadow-md hover:shadow-lg transform transition duration-500 hover:scale-105 flex flex-col items-stretch">
@@ -43,7 +43,7 @@
                         <p class="text-md tracking-normal mb-2"><%= business.description %></p>
                     </div>
                     <%= link_to business_path(business), class:"text-pink-600 py-2 mt-auto mb-2 focus:outline-none hover:text-pink-700 text-lg px-4 pb-2" do %>
-                        See more information
+                        <%= t('.see_btn') %>
                         <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
                             <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
                         </svg>

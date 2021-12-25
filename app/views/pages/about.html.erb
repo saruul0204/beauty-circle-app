@@ -2,28 +2,26 @@
   <div class="grid gap-10 lg:grid-cols-2">
     <div class="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
       <div class="max-w-xl mb-6">
-        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"> About Beauty Circle</h2>
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"><%= t('.about_h2')%></h2>
         <p class="text-base text-gray-700 md:text-lg">
-          Beauty Circle is where you will find all beauty salons in Macedonia with their information and treatments they provide. Now you can book an appointment to your favorite salon ONLINE.
+          <%= t('.about_p')%>
         </p>
       </div>
       <div>
        <%= link_to pages_contact_path, class: " mb-6 inline-flex items-center font-semibold transition-colors text-pink-600 duration-200 hover:text-pink-700" do %>
-        Get in touch for more information
+          <%= t('.about_btn')%>
           <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
           <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
         </svg>
        <% end %>
       </div>
       <div class="max-w-xl mb-6">
-        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"> Join Us</h2>
-        <p class="text-base text-gray-700 md:text-lg">
-          If you own a beauty related business join our platform to manage all your appointments online from anywhere and have a chance to reach more customers!
-        </p>
+        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none"><%= t('.join_us')%></h2>
+        <p class="text-base text-gray-700 md:text-lg"><%= t('.join_us_p')%></p>
       </div>
       <div>
        <%= link_to new_user_registration_path, class: "inline-flex items-center font-semibold transition-colors text-pink-600 duration-200 hover:text-pink-700" do %>
-        Sign Up
+        <%= t('.join_us_btn')%>
           <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
           <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
         </svg>
