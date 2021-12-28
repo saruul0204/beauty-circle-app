@@ -10,6 +10,6 @@ RSpec.describe City, type: :model do
   end
 
   describe 'validate image' do
-    it { expect(city.city_image).to be_valid }
+    it { expect(city.city_image.attached?).to eq(true) }
   end
 end
