@@ -1,18 +1,17 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  link_to_files = Dir[Rails.root.join('spec/fixtures/cities/*')]
-  attach_new_images = []
-  city_name = CITY_NAMES.sample
-
-  link_to_files.each do |img|
-    attach_new_images.push(Rack::Test::UploadedFile.new(img, 'image/jpeg'))
-  end
-
-  byebug
-
   factory :city do
-    name { city_name }
-    city_image { attach_new_images.find { |img| img.original_filename.include?(city_name.downcase) } }
+    name { CITY_NAMES.sample }
+
+    after(:create) do |city|
+      new_image = Rails.root.join("spec/fixtures/cities/#{city.name.downcase}.jpg")
+      city.city_image.attach(
+        io: File.open(new_image),
+        filename: "#{city.name.downcase}.jpg",
+        content_type: 'image/jpg',
+        identify: false
+      )
+    end
   end
 end
