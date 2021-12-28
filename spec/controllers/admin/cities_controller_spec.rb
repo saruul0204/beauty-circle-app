@@ -41,10 +41,10 @@ describe Admin::CitiesController, type: :controller do # rubocop:disable Metrics
     end
 
     it 'filter Name works' do
-      matching_city = create :city, name: 'ABCDEFG'
-      non_matching_city = create :city, name: 'HIJKLMN'
+      matching_city = create :city, name: 'Struga'
+      non_matching_city = create :city, name: 'Bitola'
 
-      get :index, params: { q: { name_cont: 'BCDEF' } }
+      get :index, params: { q: { name_cont: 'struga' } }
 
       expect(assigns(:cities)).to include(matching_city)
       expect(assigns(:cities)).not_to include(non_matching_city)
