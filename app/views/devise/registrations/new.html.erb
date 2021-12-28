@@ -3,12 +3,11 @@
 				<!-- Row -->
 				<div class="w-full lg:w-11/12 flex">
 					<!-- Col -->
-					<div
-						class="w-full h-auto bg-gray-200 hidden md:block md:w-1/2 bg-cover rounded-l-lg"
-						style="background-image: url(<%= asset_path('signin') %>);"
-					></div>
+					<div class="w-full h-auto bg-gray-200 hidden md:block md:w-1/2 bg-cover">
+						<%= image_tag('signin.jpg', class:"h-full w-full object-cover align-middle rounded-l-lg") %>
+					</div>
 					<!-- Col -->
-					<div class="w-full lg:w-6/12 bg-gray-200 p-5 rounded-lg lg:rounded-l-none">
+					<div class="w-full lg:w-6/12 bg-gray-200 p-5 rounded-r-lg">
 						<h3 class="pt-4 text-2xl text-center">Create an Account!</h3>
 						<%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { class:"px-8 pt-6 pb-8 mb-4 bg-gray-200 rounded" } do |f| %>
 						 <div class="mb-4">
