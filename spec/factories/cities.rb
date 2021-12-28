@@ -2,6 +2,16 @@
 
 FactoryBot.define do
   factory :city do
-    name { %w[Skopje Ohrid Struga Bitola Stip Strumica Kumanovo Tetovo Gostivar].sample }
+    name { CITY_NAMES.sample }
+
+    after(:create) do |city|
+      new_image = Rails.root.join("spec/fixtures/cities/#{city.name.downcase}.jpg")
+      city.city_image.attach(
+        io: File.open(new_image),
+        filename: "#{city.name.downcase}.jpg",
+        content_type: 'image/jpg',
+        identify: false
+      )
+    end
   end
 end

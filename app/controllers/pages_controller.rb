@@ -26,4 +26,8 @@ class PagesController < ApplicationController
   def contact_params
     params.require(:contact).permit(:full_name, :email, :message)
   end
+
+  def city_params
+    params.require(:city).permit(:name, :city_image)
+  end
 end

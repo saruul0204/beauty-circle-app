@@ -29,8 +29,12 @@
     <% @cities.each do |city| %>
     <div>
       <%= link_to businesses_path(salon_city: city) do %>
-        <div class="bg-gray-300 h-44"></div>
         <h3 class="text-lg font-semibold text-gray-500 mt-2"><%= t('.salons_in')%> <%= city.name%></h3>
+        <div class="bg-gray-300 h-44">
+        <% if city.city_image.attached? %>
+          <%= image_tag city.city_image, class:"h-44 w-full object-cover align-middle rounded hover:opacity-50"%>
+        <% end %>
+        </div>
       <% end %>
     </div>
     <% end %>
