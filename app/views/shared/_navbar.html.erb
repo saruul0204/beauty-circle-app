@@ -1,8 +1,8 @@
 <div class="px-4 py-5 w-full mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
   <div class="relative flex items-center justify-between">
-    <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
-      <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Beauty Circle</span>
-    </a>
+    <%= link_to root_path, class:"text-gray-600 flex items-center space-x-2 px-4" do %>
+      <span class="text-2xl font-extrabold">Beauty Circle</span>
+    <% end %>
     <ul class="flex items-center hidden space-x-8 lg:flex">
       <li><%= link_to t('.browse_salons'), businesses_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
       <li><%= link_to t('.about'), pages_about_path, class: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
