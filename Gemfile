@@ -85,4 +85,4 @@ gem 'factory_bot_rails'
 
 gem 'sendgrid-ruby'
 
-gem "pundit"
+gem 'pundit'

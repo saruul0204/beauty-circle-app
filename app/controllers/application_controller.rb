@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  include Pundit::Authorization
+  include Pundit # ::Authorization
 
   before_action :set_locale
   before_action { @pagy_locale = params[:locale] }

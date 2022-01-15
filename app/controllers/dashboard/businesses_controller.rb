@@ -9,6 +9,12 @@ module Dashboard
     end
 
     def show
+      byebug
+      # BusinessPolicy.new(current_user, @business).show?
+      unless BusinessPolicy.new(current_user, @business).show?
+        return redirect_to root_path, alert: "You don't have access to view this!"
+      end
+
       @treatments = @business.treatments.order(created_at: :desc)
     end
 
@@ -54,7 +60,8 @@ module Dashboard
     end
 
     def find_business
-      @business = current_user.businesses.active.find(params[:id])
+      # @business = current_user.businesses.active.find(params[:id])
+      @business = Business.find(params[:id])
     end
   end
 end
