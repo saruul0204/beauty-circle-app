@@ -5,12 +5,12 @@ class BusinessPolicy < ApplicationPolicy
     @user == @record.user
   end
 
-  def create?
-    @user == @record.user
-  end
-
   def new?
     create?
+  end
+
+  def create?
+    @user == @record.user
   end
 
   def update?

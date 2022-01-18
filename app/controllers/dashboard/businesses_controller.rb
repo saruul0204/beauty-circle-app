@@ -16,6 +16,7 @@ module Dashboard
 
     def new
       @business = Business.new
+      @business.user_id = current_user.id
       @business.treatments.new
       authorize @business
     end
