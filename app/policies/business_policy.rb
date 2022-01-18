@@ -1,23 +1,27 @@
 # frozen_string_literal: true
 
 class BusinessPolicy < ApplicationPolicy
-  attr_reader :user, :business
-
-  def initialize(user, business)
-    @user = user
-    @business = business
+  def show?
+    @user == @record.user
   end
 
-  def edit
-    @user.id == @business.user_id
+  def create?
+    @user == @record.user
   end
 
-  def update
-    edit?
+  def new?
+    create?
   end
 
-  def show
-    # byebug
-    @user.id == @business.user_id
+  def update?
+    @user == @record.user
+  end
+
+  def edit?
+    update?
+  end
+
+  def destroy?
+    @user == @record.user
   end
 end
