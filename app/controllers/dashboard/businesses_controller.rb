@@ -62,7 +62,6 @@ module Dashboard
     end
 
     def find_business
-      # @business = current_user.businesses.active.find(params[:id])
       @business = Business.active.find(params[:id])
     end
   end
