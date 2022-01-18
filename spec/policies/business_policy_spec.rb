@@ -26,7 +26,6 @@ describe BusinessPolicy do
       end
     end
   end
-  # rubocop:disable Layout/LineLength
 
   context 'when user is editing own business' do
     link_to_default_image = Rails.root.join('spec/fixtures/files/salon_photo.jpg')
@@ -34,12 +33,15 @@ describe BusinessPolicy do
 
     permissions :edit?, :update?, :destroy? do
       it 'grants access if business belongs to user' do
-        expect(business_policy).to permit(user, Business.create!(user_id: user.id, name: 'Some name', description: 'Some text',
-                                                                 address: 'Some address', city_id: create(:city).id, country: 'MK',
-                                                                 open_hour: '8am', close_hour: '8pm', phone_number: '123456',
-                                                                 email: '123@test.com', images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')]))
+        expect(business_policy).to permit(user, Business.create!(user_id: user.id, name: 'Some name',
+                                                                 description: 'Some text', address: 'Some address',
+                                                                 city_id: create(:city).id, country: 'MK',
+                                                                 open_hour: '8am', close_hour: '8pm',
+                                                                 phone_number: '123456', email: '123@test.com',
+                                                                 images: [Rack::Test::UploadedFile.new(
+                                                                   link_to_default_image, 'image/jpeg'
+                                                                 )]))
       end
     end
   end
 end
-# rubocop:enable Layout/LineLength
