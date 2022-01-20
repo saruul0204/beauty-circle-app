@@ -157,7 +157,7 @@
     </div>
     <div data-controller="nested-form">
         <template data-target="nested-form.template">
-            <%= f.fields_for :treatments, @business.treatments.new, child_index: 'NEW_RECORD' do |treatment| %>
+            <%= f.fields_for :treatments, child_index: 'NEW_RECORD' do |treatment| %>
                 <%= render "treatments/treatment_fields", form: treatment %>
             <% end %>
         </template>
