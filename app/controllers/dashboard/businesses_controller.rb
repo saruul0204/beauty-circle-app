@@ -3,24 +3,28 @@
 module Dashboard
   class BusinessesController < Dashboard::DashboardController
     before_action :find_business, only: %i[show edit update destroy]
+    after_action :verify_authorized, except: :index
 
     def index
       @businesses = current_user.businesses.active
     end
 
     def show
+      authorize @business
       @treatments = @business.treatments.order(created_at: :desc)
     end
 
     def new
       @business = Business.new
+      @business.user_id = current_user.id
       @business.treatments.new
+      authorize @business
     end
 
     def create
       @business = Business.new(business_params)
       @business.user_id = current_user.id
-
+      authorize @business
       if @business.save
         redirect_to @business
       else
@@ -28,9 +32,12 @@ module Dashboard
       end
     end
 
-    def edit; end
+    def edit
+      authorize @business
+    end
 
     def update
+      authorize @business
       if @business.update(business_params)
         redirect_to @business
       else
@@ -39,6 +46,7 @@ module Dashboard
     end
 
     def destroy
+      authorize @business
       @business.update!(deleted_at: Time.zone.now)
       flash[:notice] = "You have deleted #{@business.name.to_s.capitalize} business."
       redirect_to dashboard_businesses_path
@@ -54,7 +62,7 @@ module Dashboard
     end
 
     def find_business
-      @business = current_user.businesses.active.find(params[:id])
+      @business = Business.active.find(params[:id])
     end
   end
 end
