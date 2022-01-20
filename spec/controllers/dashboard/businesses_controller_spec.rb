@@ -29,7 +29,6 @@ describe Dashboard::BusinessesController, type: :controller do # rubocop:disable
       expect(response).to have_http_status(:success)
     end
   end
-  # rubocop:disable Layout/LineLength
 
   describe 'POST create business' do
     context 'with valid attributes' do
@@ -38,18 +37,22 @@ describe Dashboard::BusinessesController, type: :controller do # rubocop:disable
       it 'creates new business' do
         expect do
           post :create,
-               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
-                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com', images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')] } }
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address',
+                                     city_id: create(:city).id, country: 'MK', open_hour: '8am',
+                                     close_hour: '8pm', phone_number: '123456', email: '123@test.com',
+                                     images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')] } }
         end.to change(Business, :count).by(1)
       end
-      # rubocop:disable Layout/ExampleLength
 
       it 'creates new business with treatments' do
         expect do
           post :create,
-               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
-                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com', images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')],
-                                     treatments_attributes: [name: 'Test', description: 'Desc', price: '1', duration: '10'] } }
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address',
+                                     city_id: create(:city).id, country: 'MK', open_hour: '8am', close_hour: '8pm',
+                                     phone_number: '123456', email: '123@test.com',
+                                     images: [Rack::Test::UploadedFile.new(link_to_default_image, 'image/jpeg')],
+                                     treatments_attributes: [name: 'Test', description: 'Desc',
+                                                             price: '1', duration: '10'] } }
         end.to change(Treatment, :count).by(1)
       end
     end
@@ -65,15 +68,14 @@ describe Dashboard::BusinessesController, type: :controller do # rubocop:disable
       it 'doesnt create treatment' do
         expect do
           post :create,
-               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address', city_id: create(:city).id, country: 'MK',
-                                     open_hour: '8am', close_hour: '8pm', phone_number: '123456', email: '123@test.com',
+               params: { business: { name: 'Some name', description: 'Some text', address: 'Some address',
+                                     city_id: create(:city).id, country: 'MK', open_hour: '8am',
+                                     close_hour: '8pm', phone_number: '123456', email: '123@test.com',
                                      treatments_attributes: [name: '', description: '', price: '', duration: ''] } }
         end.to change(Treatment, :count).by(0)
       end
     end
   end
-  # rubocop:enable Layout/ExampleLength
-  # rubocop:enable Layout/LineLength
 
   describe 'GET dashboard/businesses/:id/edit' do
     let(:business) { create(:business, user: user) }

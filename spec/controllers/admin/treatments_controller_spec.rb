@@ -64,7 +64,7 @@ describe Admin::TreatmentsController, type: :controller do # rubocop:disable Met
       expect(assigns(:treatment)).to be_a_new(Treatment)
     end
 
-    it 'renders the form elements' do # rubocop:disable RSpec/MultipleExpectations, RSpec/ExampleLength
+    it 'renders the form elements' do # rubocop:disable RSpec/MultipleExpectations
       get :new
       expect(page).to have_field('Name')
       expect(page).to have_field('Description')
