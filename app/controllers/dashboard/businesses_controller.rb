@@ -14,7 +14,6 @@ module Dashboard
 
     def new
       @business = Business.new
-      @business.treatments.new
     end
 
     def create
