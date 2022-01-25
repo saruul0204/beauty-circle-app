@@ -87,4 +87,5 @@ gem 'sendgrid-ruby'
 
 gem 'pundit'
 
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-rails'
+gem 'aws-sdk-s3'
