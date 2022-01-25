@@ -86,3 +86,5 @@ gem 'factory_bot_rails'
 gem 'sendgrid-ruby'
 
 gem 'pundit'
+
+gem "aws-sdk-s3", require: false
