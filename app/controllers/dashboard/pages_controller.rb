@@ -2,6 +2,8 @@
 
 module Dashboard
   class PagesController < Dashboard::DashboardController
-    def home; end
+    def home
+      authorize :dashboard, :home?
+    end
   end
 end
