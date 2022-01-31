@@ -48,7 +48,6 @@
                         </button>
                         <div x-show="open" class="bg-white">
                             <%= link_to 'Home', dashboard_root_path, class:"py-2 px-16 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
-                            <%= link_to 'Statistics', "#", class:"py-2 px-16 block text-sm hover:bg-pink-200 hover:text-pink-600" %>
                         </div>
                     </div>
                     <div x-data="{ open: false }">
@@ -155,7 +154,6 @@
                                 <li><%= link_to "Dashboard", dashboard_root_path, aria: { label:"Dashboard" }, title:"Go to Dashboard", class:"font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"%></li>
                                     <ul class= "space-y2">
                                         <li class="mb-1 ml-4"><%= link_to "Home", dashboard_root_path%></li>
-                                        <li class="mb-1 ml-4"><%= link_to "Statistics", "#" %></li>
                                     </ul>
                                 <li><h1 aria-label="Account" title="Account" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Account</h1></li>
                                     <ul class= "space-y2">

@@ -12,6 +12,7 @@ class Business < ApplicationRecord
   validate :image_count
   accepts_nested_attributes_for :treatments, reject_if: :all_blank, allow_destroy: true
   validates_associated :treatments
+  is_impressionable
 
   def full_address
     "#{address}, #{city.name}, #{country}"
