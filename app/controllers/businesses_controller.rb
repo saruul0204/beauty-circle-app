@@ -16,6 +16,7 @@ class BusinessesController < ApplicationController
   def show
     @business = Business.active.find(params[:id])
     @treatments = @business.treatments.order(created_at: :desc)
+    impressionist(@business)
   end
 
   private
