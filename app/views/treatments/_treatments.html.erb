@@ -27,7 +27,7 @@
                 </div>
                 <div class="flex justify-start w-56 lg:justify-end">
                     <span class="inline-flex items-center font-semibold transition-colors duration-200 text-pink-600 hover:text-pink-700">
-                    <%= number_to_currency(treatment.price) %>
+                    <%= number_to_currency(treatment.price, {unit: '€'}) %>
                     </span>
                 </div>
             </div>
