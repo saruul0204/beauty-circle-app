@@ -1,7 +1,7 @@
 GIT
   remote: git@github.com:charlotte-ruby/impressionist.git
-  revision: 46a582ff8cd3496da64f174b30b91f9d97e86643
-  ref: 46a582ff8cd3496da64f174b30b91f9d97e86643
+  revision: e0db056a2ac0961379f8686d079387cbddb78b65
+  branch: master
   specs:
     impressionist (2.0.0)
       friendly_id
