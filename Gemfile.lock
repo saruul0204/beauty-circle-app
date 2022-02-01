@@ -1,14 +1,4 @@
 GIT
-  remote: git@github.com:charlotte-ruby/impressionist.git
-  revision: e0db056a2ac0961379f8686d079387cbddb78b65
-  branch: master
-  specs:
-    impressionist (2.0.0)
-      friendly_id
-      nokogiri (~> 1)
-      rails (>= 3.2.15)
-
-GIT
   remote: https://github.com/faker-ruby/faker.git
   revision: 148219533bac493259a6b734f45ac9310ac4e853
   branch: master
@@ -172,8 +162,6 @@ GEM
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.7.0)
-    friendly_id (5.4.2)
-      activerecord (>= 4.0.0)
     globalid (0.5.2)
       activesupport (>= 5.0)
     has_scope (0.8.0)
@@ -181,6 +169,8 @@ GEM
       activesupport (>= 5.2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    impressionist (2.0.0)
+      nokogiri (~> 1)
     inherited_resources (1.13.0)
       actionpack (>= 5.2, < 6.2)
       has_scope (~> 0.6)
@@ -416,7 +406,7 @@ DEPENDENCIES
   email_validator
   factory_bot_rails
   faker!
-  impressionist!
+  impressionist
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
