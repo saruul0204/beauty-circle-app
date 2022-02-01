@@ -6,7 +6,7 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Name
                 </label>
-                <%= form.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of your business'%>
+                <%= form.text_field :name, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Name of the treatment'%>
                 <%= field_has_error(:name, form.object )%>
             </div>
         </div>
@@ -15,7 +15,7 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Description
                 </label>
-                <%= form.text_area :description, required: true, rows:4, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'What type of business(hair salon, nail bar, spa, etc), how many years in business, provided services and promotions'%>
+                <%= form.text_area :description, required: true, rows:4, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'Describe the treatment process, what products are used etc..'%>
                 <%= field_has_error(:description, form.object)%>
             </div>
         </div>
@@ -35,7 +35,7 @@
                 <label class="block uppercase text-gray-600 text-xs font-bold mb-2" htmlfor="grid-password">
                     Price
                 </label>
-                <%= form.text_field :price, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'15$'%>
+                <%= form.text_field :price, required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150", placeholder:'500 MKD'%>
                 <%= field_has_error(:price, form.object)%>
             </div>
         </div>
