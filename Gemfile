@@ -90,5 +90,5 @@ gem 'pundit'
 gem 'aws-sdk-rails'
 gem 'aws-sdk-s3'
 
-gem 'impressionist', :git => 'git@github.com:charlotte-ruby/impressionist.git', :branch => 'master'
+gem 'impressionist'
 
