@@ -17,7 +17,7 @@
             <% end %>
             <% @businesses.each do |business|%>
                 <div class="bg-white rounded-md shadow-md hover:shadow-lg transform transition duration-500 hover:scale-105 flex flex-col items-stretch">
-                    <%= image_tag 'salon_photo.jpg', class:"object-cover w-full h-full rounded-tl-md rounded-tr-md", style: 'height: 250px; max-height: 250px;', alt:"salon image"%>
+                    <%= image_tag business.images.first, class:"object-cover w-full h-full rounded-tl-md rounded-tr-md", style: 'height: 250px; max-height: 250px;', alt:"salon image"%>
                     <div class="px-4 pt-4">
                         <h1 class="text-xl font-gray-700 font-bold mb-2"> <%= business.name%> </h1>
                         <div class="flex items-center mb-2">
