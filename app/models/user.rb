@@ -3,8 +3,6 @@
 class User < ApplicationRecord
   MIN_LEN = 3
   MAX_LEN = 250
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
