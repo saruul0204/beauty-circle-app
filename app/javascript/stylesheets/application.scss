@@ -3,6 +3,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "pagy";
+@import "simple_calendar";
 
 .error-message {
     @apply bg-red-100 text-xs text-red-500 pl-2 py-2 mb-2 mt-2 rounded text-left;

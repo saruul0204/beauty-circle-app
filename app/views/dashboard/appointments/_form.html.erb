@@ -1,4 +1,4 @@
-<%= form_with(model: appointment) do |form| %>
+<%= form_with(model: [:dashboard, @appointment]) do |form| %>
   <% if appointment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
@@ -33,12 +33,8 @@
 
   <div class="field">
     <%= form.label :treatment_id %>
-    <%= form.text_field :treatment_id %>
-  </div>
+    <%= form.collection_select :treatment_id, Treatment.order(:name), :id, :name, {prompt: "Treatment"} , {required: true, class:"border-0 px-3 py-3 placeholder-gray-300 text-gray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring focus:ring-pink-600 w-full ease-linear transition-all duration-150"} %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
   </div>
 
   <div class="actions">
