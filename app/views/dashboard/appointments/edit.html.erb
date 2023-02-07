@@ -1,6 +1,6 @@
 <h1>Editing Appointment</h1>
 
-<%= render 'form', appointment: @appointment %>
+<%= render 'form', business: @business, appointment: @appointment %>
 
-<%= link_to 'Show', dashboard_appointment_path(@appointment) %> |
-<%= link_to 'Back', dashboard_appointments_path %>
+<%= link_to 'Show', dashboard_business_appointment_path(@appointment) %> |
+<%= link_to 'Back', dashboard_business_appointments_path %>

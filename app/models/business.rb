@@ -5,6 +5,7 @@ class Business < ApplicationRecord
             :close_hour, :phone_number, :email, presence: true
   belongs_to :user
   has_many :treatments, inverse_of: :business, dependent: :destroy
+  has_many :appointments, dependent: :destroy
   belongs_to :city
   has_many_attached :images, dependent: :destroy
   validates :images, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],
@@ -24,6 +25,10 @@ class Business < ApplicationRecord
   end
 
   scope :active, -> { where(deleted_at: nil) }
+
+  def upcoming_appointments
+    appointments.order(start_time: :asc).select { |a| a.start_time > (DateTime.now) }.first(10)
+  end
 
   private
 

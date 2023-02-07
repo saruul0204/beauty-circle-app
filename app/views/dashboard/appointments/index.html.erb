@@ -1,13 +1,13 @@
 <h1>Appointments</h1>
 
-<%= link_to 'New Appointment', new_dashboard_appointment_path %>
+<%= link_to 'New Appointment', new_dashboard_business_appointment_path %>
 
 <%= week_calendar(events: @appointments) do |date, appointments| %>
   <%= date.strftime('%b %d') %>
 
   <% appointments.each do |appointment| %>
     <div class="px-2 py-1 rounded-lg mt-1 overflow-hidden border border-green-200 text-green-800 bg-green-100">
-      <%= link_to(appointment.time_name, edit_dashboard_appointment_path(appointment), class:"text-sm truncate leading-tight" ) %>
+      <%= link_to(appointment.time_name, edit_dashboard_business_appointment_path(appointment, business_id: appointment.business_id), class:"text-sm truncate leading-tight" ) %>
     </div>
   <% end %>
 <% end %>
@@ -22,7 +22,7 @@
             <p class="text-sm pt-2 leading-4 leading-none text-gray-600 dark:text-gray-300">Client name: <%= appointment.client_name %></p>
         </div>
         <div>
-          <%= link_to("Show", dashboard_appointment_path(appointment), class:"text-lg truncate leading-tight" ) %>
+          <%= link_to("Show", dashboard_business_appointment_path(appointment, business_id: appointment.business_id), class:"text-lg truncate leading-tight" ) %>
         </div>
     </div>
   <% end %>

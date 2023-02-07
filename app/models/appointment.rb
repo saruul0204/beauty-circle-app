@@ -2,6 +2,7 @@
 
 class Appointment < ApplicationRecord
   belongs_to :treatment
+  belongs_to :business
   belongs_to :user
 
   def time_name
