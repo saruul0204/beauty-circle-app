@@ -29,4 +29,8 @@ class User < ApplicationRecord
   def inactive_message
     deleted_at ? :deleted_account : super
   end
+
+  def upcoming_appointments
+    appointments.order(start_time: :asc).select { |a| a.start_time > (DateTime.now) }.first(10)
+  end
 end

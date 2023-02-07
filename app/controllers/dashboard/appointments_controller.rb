@@ -6,6 +6,7 @@ module Dashboard
 
     def index
       @appointments = current_user.appointments.all
+      @upcoming_appointments = current_user.upcoming_appointments
     end
 
     def show

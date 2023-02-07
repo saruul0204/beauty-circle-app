@@ -7,4 +7,5 @@ class Appointment < ApplicationRecord
   def time_name
     "#{start_time.strftime('%R')}: #{client_name}"
   end
+
 end
