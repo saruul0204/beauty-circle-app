@@ -10,8 +10,7 @@ module Dashboard
       @upcoming_appointments = @business.upcoming_appointments
     end
 
-    def show
-    end
+    def show; end
 
     def new
       @appointment = Appointment.new
@@ -19,8 +18,7 @@ module Dashboard
       @appointment.business_id = @business.id
     end
 
-    def edit
-    end
+    def edit; end
 
     def create
       @appointment = Appointment.new(appointment_params)
@@ -57,7 +55,7 @@ module Dashboard
     end
 
     def appointment_params
-      params.require(:appointment).permit(:title, :client_name, :client_email, :start_time, :treatment_id)
+      params.require(:appointment).permit(:title, :client_name, :client_email, :start_time, :end_time, :treatment_id)
     end
   end
 end
