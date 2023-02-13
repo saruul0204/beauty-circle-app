@@ -1,6 +1,6 @@
 # README
 
-### **Topic of the project:** `Beauty-Circle` is where you will find all beauty salons in one place and where you can book an appointment to your favorite salon. This application provides dashboard for registered beauty salons where they can edit their account, create, edit or delete different procedures they provide.
+### **Topic of the project:** `Beauty-Circle` is where you will find all beauty salons in one place. This application provides dashboard for registered beauty salons where they can edit their account, add appointments to calendar, create, edit or delete different procedures they provide.
 
 
 ### **Ruby version:** 2.7.3 ([check here](https://github.com/saruul0204/beauty-circle-app/blob/master/.ruby-version))
