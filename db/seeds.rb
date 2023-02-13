@@ -23,10 +23,13 @@ USERS.times do |i|
   rand(1..3).times { create(:business, user: user, city: City.all.sample) }
 end
 
-puts 'Seeding treatments'
+puts 'Seeding treatments appointments'
 Business.all.each do |business|
   # Create couple treatments per business
 rand(3..10).times { create(:treatment, business: business) }
+rand(5..10).times { create(:appointment, business: business, user_id: business.user_id, treatment: business.treatments.sample) }
+
 end
+
 
 puts 'Seeding completed'

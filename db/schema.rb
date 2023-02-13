@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_234828) do
+ActiveRecord::Schema.define(version: 2023_02_09_011804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,22 @@ ActiveRecord::Schema.define(version: 2022_01_30_234828) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "title"
+    t.string "client_name"
+    t.string "client_email"
+    t.datetime "start_time"
+    t.bigint "treatment_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "business_id"
+    t.datetime "end_time"
+    t.index ["business_id"], name: "index_appointments_on_business_id"
+    t.index ["treatment_id"], name: "index_appointments_on_treatment_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -133,7 +149,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_234828) do
     t.string "name"
     t.text "description"
     t.string "price"
-    t.string "duration"
+    t.integer "duration", default: 60
     t.bigint "business_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -159,6 +175,9 @@ ActiveRecord::Schema.define(version: 2022_01_30_234828) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointments", "businesses"
+  add_foreign_key "appointments", "treatments"
+  add_foreign_key "appointments", "users"
   add_foreign_key "businesses", "cities"
   add_foreign_key "businesses", "users"
   add_foreign_key "treatments", "businesses"

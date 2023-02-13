@@ -210,14 +210,14 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.1)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.8.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.4)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.14.2)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.12.4-x86_64-linux)
+    nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pagy (3.14.0)
@@ -230,7 +230,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.1.1)
       activesupport (>= 3.0.0)
-    racc (1.5.2)
+    racc (1.6.2)
     rack (2.2.3)
     rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
@@ -345,6 +345,8 @@ GEM
       ruby_http_client (~> 3.4)
     shoulda-matchers (5.0.0)
       activesupport (>= 5.2.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -427,6 +429,7 @@ DEPENDENCIES
   selenium-webdriver
   sendgrid-ruby
   shoulda-matchers (~> 5.0)
+  simple_calendar
   simplecov
   spring
   turbolinks (~> 5)

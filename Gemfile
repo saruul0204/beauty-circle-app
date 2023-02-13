@@ -92,3 +92,5 @@ gem 'aws-sdk-s3'
 
 gem 'impressionist'
 
+gem 'simple_calendar'
+

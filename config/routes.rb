@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   namespace :dashboard do
-    resources :businesses
-    root to: 'pages#home'
+    resources :businesses do
+      resources :appointments
+    end
+      root to: 'pages#home'
   end
 end

@@ -6,6 +6,6 @@ FactoryBot.define do
     name { Faker::Lorem.word }
     description { Faker::Lorem.paragraph(sentence_count: 3) }
     price { Faker::Commerce.price(range: 5..30, as_string: true) }
-    duration { "#{Faker::Number.between(from: 30, to: 120)} minutes" }
+    duration { Faker::Number.between(from: 30, to: 120) }
   end
 end

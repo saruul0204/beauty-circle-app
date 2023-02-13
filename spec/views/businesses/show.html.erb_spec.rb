@@ -23,6 +23,6 @@ RSpec.describe 'businesses/show.html.erb', type: :view do
   it 'displays treatments' do
     render
 
-    expect(rendered).to include(treatment.name, treatment.description, treatment.duration, treatment.price)
+    expect(rendered).to include(treatment.name, treatment.description, treatment.duration.to_s, treatment.price)
   end
 end

@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :businesses, dependent: :destroy
+  has_many :appointments, dependent: :destroy
 
   validates :email, email: { mode: :strict }
   validates :username, presence: true, uniqueness: { case_sensitive: false },
